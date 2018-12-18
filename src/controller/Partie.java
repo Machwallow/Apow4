@@ -14,7 +14,7 @@ public class Partie {
         this.tempsTour = tempsTour;
         Matrice=new int[nombreLigne][nombreColone];
     }
-    public int joueur(int joueur, int y){
+    public int ajouterJeton(int joueur, int y){
         int x=0;
         int i,k;
         int nbAligne;
@@ -25,6 +25,7 @@ public class Partie {
         }
         if(x==nombreLigne)
             return -1;
+        listeCoup.add(y);
         Matrice[x][y]=joueur;
         if(x>=alignerGagnant-1) {
             i = (x - alignerGagnant-1);
@@ -92,5 +93,17 @@ public class Partie {
                 return 2;
         }
         return 0;
+    }
+
+    public void annuler(){
+        if(listeCoup.size()==0)
+            return;
+        int i =nombreLigne-1;
+        while(Matrice[i][listeCoup.get(listeCoup.size()-1)]==0){
+            i=i+1;
+        }
+        Matrice[i][listeCoup.get(listeCoup.size()-1)]=0;
+        listeCoup.remove(listeCoup.size()-1);
+
     }
 }
