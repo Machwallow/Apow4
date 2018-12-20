@@ -3,15 +3,14 @@ package controller;
 import java.util.ArrayList;
 
 public class Partie {
-    private int nombreColone,nombreLigne,alignerGagnant,tempsTour;
+    private int nombreColone,nombreLigne,alignerGagnant;
     private ArrayList<Integer> listeCoup;
     private int [][] Matrice;
 
-    public Partie(int nombreColone, int nombreLigne, int alignerGagnant, int tempsTour) {
+    public Partie(int nombreColone, int nombreLigne, int alignerGagnant) {
         this.nombreColone = nombreColone;
         this.nombreLigne = nombreLigne;
         this.alignerGagnant = alignerGagnant;
-        this.tempsTour = tempsTour;
         Matrice=new int[nombreLigne][nombreColone];
     }
     public int ajouterJeton(int joueur, int y){
