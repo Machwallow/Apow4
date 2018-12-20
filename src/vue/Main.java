@@ -1,4 +1,4 @@
-package vue;
+package Vue;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -25,7 +25,7 @@ public class Main extends Application {
         bundle = ResourceBundle.getBundle("bundles.bundle", Locale.getDefault());
         Parent root = FXMLLoader.load(getClass().getResource("accueil.fxml"),bundle);
         changeLocale(new Locale("fr_FR"));
-        primaryStage.setTitle("Hello World");
+        primaryStage.setTitle("Apow4");
         primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.show();
     }
