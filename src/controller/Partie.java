@@ -7,12 +7,29 @@ public class Partie {
     private ArrayList<Integer> listeCoup;
     private int [][] Matrice;
 
+    public int[][] getMatrice() {
+        return Matrice;
+    }
+
+    public int getNombreColone() {
+        return nombreColone;
+    }
+
+    public int getNombreLigne() {
+        return nombreLigne;
+    }
+
     public Partie(int nombreColone, int nombreLigne, int alignerGagnant) {
         this.nombreColone = nombreColone;
         this.nombreLigne = nombreLigne;
         this.alignerGagnant = alignerGagnant;
         Matrice=new int[nombreLigne][nombreColone];
     }
+
+    public int getAlignerGagnant() {
+        return alignerGagnant;
+    }
+
     public int ajouterJeton(int joueur, int y){
         int x=0;
         int i,k;
