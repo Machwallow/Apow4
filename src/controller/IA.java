@@ -108,10 +108,10 @@ public class IA {
     }
 
     public int choisirCoup(Partie partie){
-        int y,i=0,joueur=1,score,maxscore=-999,yRetour=-1;
+        int y,joueur=1,score,maxscore=-999,yRetour=-1;
         for (y = 0; y < partie.getNombreColone(); y++) {
             partie.ajouterJeton(joueur, y);
-            score=ComparerCoup(partie, i,joueur*-1);
+            score=ComparerCoup(partie, 1,joueur*-1);
             if(score>maxscore){
                 maxscore=score;
                 yRetour=y;
@@ -127,7 +127,7 @@ public class IA {
         }
         for (y = 0; y < partie.getNombreColone(); y++) {
             partie.ajouterJeton(joueur, y);
-            score=ComparerCoup(partie, i,joueur*-1);
+            score=ComparerCoup(partie, i+1,joueur*-1);
             if((joueur==1 && score>maxscore)||(joueur!=1 && score<maxscore))
                 maxscore=score;
             partie.annuler();
