@@ -8,10 +8,7 @@ public class IA {
     public IA(int difficulte) {
         this.difficulte = difficulte;
     }
-    public int choisirCoup(Partie partie){
 
-        return (int)random()*partie.getNombreLigne();
-    }
     private int evaluerCoup(Partie partie,int prochainJoueur){
         int j,i,x,y,evaluation=0,equipeAdjacente1=0,equipeAdjacente2,scoreCaseJ1,scoreCaseJ2,sens,score,axe,deltaX,deltaY;
         int nombreGagnantJ1=0,nombreGagnantJ2=0;
@@ -108,5 +105,33 @@ public class IA {
         // joueur 1 c'est celui dont le jeton vaut 1
         // joueur 1 c'est celui dont le jeton ne vaut pas 1
         return evaluation;
+    }
+
+    public int choisirCoup(Partie partie){
+        int y,i=0,joueur=1,score,maxscore=-999,yRetour=-1;
+        for (y = 0; y < partie.getNombreColone(); y++) {
+            partie.ajouterJeton(joueur, y);
+            score=ComparerCoup(partie, i,joueur*-1);
+            if(score>maxscore){
+                maxscore=score;
+                yRetour=y;
+            }
+            partie.annuler();
+        }
+        return yRetour;
+    }
+    private int ComparerCoup(Partie partie, int i,int joueur){
+        int y,score,maxscore=-999*joueur;
+        if(i>=difficulte){
+            return evaluerCoup(partie,joueur);
+        }
+        for (y = 0; y < partie.getNombreColone(); y++) {
+            partie.ajouterJeton(joueur, y);
+            score=ComparerCoup(partie, i,joueur*-1);
+            if((joueur==1 && score>maxscore)||(joueur!=1 && score<maxscore))
+                maxscore=score;
+            partie.annuler();
+        }
+        return maxscore;
     }
 }
