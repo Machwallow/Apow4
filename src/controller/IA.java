@@ -19,7 +19,7 @@ public class IA {
             for (y=0;y<partie.getNombreColone();y++){
                 scoreCaseJ1=0;
                 scoreCaseJ2=0;
-                if(partie.getMatrice()[x][y]==0 &&(x==0 || partie.getMatrice()[x][y]!=0)){
+                if(partie.getMatrice()[x][y]==0){
                     for(axe=1;axe<=4;axe++){
                         switch (axe) {
                             case 1 :
@@ -78,10 +78,10 @@ public class IA {
                         }
 
                     }
-                    if(scoreCaseJ1==partie.getAlignerGagnant()-1){
+                    if((x==0 || partie.getMatrice()[x][y]!=0) && scoreCaseJ1==partie.getAlignerGagnant()-1){
                         nombreGagnantJ1+=1;
                     }
-                    if(scoreCaseJ2==partie.getAlignerGagnant()-1){
+                    if((x==0 || partie.getMatrice()[x][y]!=0) && scoreCaseJ2==partie.getAlignerGagnant()-1){
                         nombreGagnantJ2+=1;
                     }
 
@@ -91,17 +91,17 @@ public class IA {
         }
         if(prochainJoueur==1){
             if(nombreGagnantJ1>=1)
-                evaluation=100; // 100 c'est beaucoup
+                evaluation=900; // 900 c'est beaucoup
             else{
                 if(nombreGagnantJ2>=2)
-                    evaluation=-100;
+                    evaluation=-900;
             }
         }else{
             if(nombreGagnantJ2>=1)
-                evaluation=-100;
+                evaluation=-900;
             else{
                 if(nombreGagnantJ1>=2)
-                    evaluation=100;
+                    evaluation=900;
             }
         }
         // négatif pour joueur 2 et positif pour joueur 1
