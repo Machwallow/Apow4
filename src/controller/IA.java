@@ -107,16 +107,28 @@ public class IA {
         return evaluation;
     }
 
-    public int choisirCoup(Partie partie){
-        int y,joueur=1,score,maxscore=-999,yRetour=-1;
+    public int choisirCoup(Partie partie,int joueur){
+        int y, score,maxscore=-999,yRetour=-1,ajoutJeton;
         for (y = 0; y < partie.getNombreColone(); y++) {
-            partie.ajouterJeton(joueur, y);
-            score=ComparerCoup(partie, 1,joueur*-1);
-            if(score>maxscore){
-                maxscore=score;
-                yRetour=y;
+            ajoutJeton=partie.ajouterJeton(joueur, y);
+            if(ajoutJeton!=-1) {//si l'ajout a bien eu lieu
+                if(ajoutJeton!=0){//victoire ou match nul
+                    return y;
+                }
+                score = ComparerCoup(partie, 1, joueur * -1);
+                if (score >= maxscore) {
+                    if (score == maxscore) {
+                        if (Math.random() < 0.4) {
+                            yRetour = y;
+                        }
+                    } else {
+                        maxscore = score;
+                        yRetour = y;
+                    }
+
+                }
+                partie.annuler();
             }
-            partie.annuler();
         }
         return yRetour;
     }

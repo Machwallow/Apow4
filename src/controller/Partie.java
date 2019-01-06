@@ -31,6 +31,11 @@ public class Partie {
     }
 
     public int ajouterJeton(int joueur, int y){
+        //retourne -1 en cas d'erreur
+        //retourne 1 en cas de victoire
+        //retourne 2 en cas de match nul
+        //retourne 0 en cas de succes
+
         int x=0;
         int i,k;
         int nbAligne;
@@ -101,7 +106,7 @@ public class Partie {
             i=0;
             boolean plein=true;
             while (i<nombreColone && plein){
-                if(Matrice [nombreLigne][i]==0)
+                if(Matrice [nombreLigne-1][i]==0)
                     plein=false;
                 i=i+1;
             }
