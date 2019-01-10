@@ -89,17 +89,17 @@ public class IA {
         }
         if(prochainJoueur==1){
             if(nombreGagnantJ1>=1)
-                evaluation=900; // 900 c'est beaucoup
+                evaluation=9000; // 900 c'est beaucoup
             else{
                 if(nombreGagnantJ2>=2)
-                    evaluation=-900;
+                    evaluation=-9000;
             }
         }else{
             if(nombreGagnantJ2>=1)
-                evaluation=-900;
+                evaluation=-9000;
             else{
                 if(nombreGagnantJ1>=2)
-                    evaluation=900;
+                    evaluation=9000;
             }
         }
         // négatif pour joueur 2 et positif pour joueur 1
@@ -109,7 +109,7 @@ public class IA {
     }
 
     public int choisirCoup(Partie partie,int joueur){
-        int y, score,maxscore=-99999*joueur,yRetour=-1,ajoutJeton;
+        int y, score,maxscore=-9999999*joueur,yRetour=-1,ajoutJeton;
         for (y = 0; y < partie.getNombreColone(); y++) {
             ajoutJeton=partie.ajouterJeton(joueur, y);
             if(ajoutJeton!=-1) {//si l'ajout a bien eu lieu
@@ -141,7 +141,7 @@ public class IA {
         return yRetour;
     }
     private int ComparerCoup(Partie partie, int i,int joueur){
-        int y,score,maxscore=-99999*joueur,ajoutJeton;
+        int y,score,maxscore=-9999999*joueur,ajoutJeton;
         if(i>=difficulte){
             return evaluerCoup(partie,joueur);
         }
@@ -151,7 +151,7 @@ public class IA {
             if(ajoutJeton!=-1) {//si l'ajout a bien eu lieu
                 if(ajoutJeton==1){
                     partie.annuler();
-                    return (10000*joueur);
+                    return (1000000*joueur);
                 }
                 if(ajoutJeton==2){
                     partie.annuler();
