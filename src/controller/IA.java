@@ -1,5 +1,6 @@
 package controller;
 
+import static java.lang.Math.max;
 import static java.lang.Math.random;
 
 public class IA {
@@ -82,7 +83,7 @@ public class IA {
                         nombreGagnantJ2+=1;
                     }
 
-                    evaluation+=scoreCaseJ1-scoreCaseJ2;
+                    evaluation+=(scoreCaseJ1*scoreCaseJ1)-(scoreCaseJ2*scoreCaseJ2);
                 }
             }
         }
@@ -108,15 +109,20 @@ public class IA {
     }
 
     public int choisirCoup(Partie partie,int joueur){
-        int y, score,maxscore=-999,yRetour=-1,ajoutJeton;
+        int y, score,maxscore=-99999*joueur,yRetour=-1,ajoutJeton;
         for (y = 0; y < partie.getNombreColone(); y++) {
             ajoutJeton=partie.ajouterJeton(joueur, y);
             if(ajoutJeton!=-1) {//si l'ajout a bien eu lieu
                 if(ajoutJeton!=0){//victoire ou match nul
+                  //  System.out.println("Choisir Coup 1 "+joueur);
+                    partie.annuler();
                     return y;
                 }
                 score = ComparerCoup(partie, 1, joueur * -1);
-                if (score >= maxscore) {
+                //System.out.println(score+"  "+maxscore+"  "+joueur);
+               // System.out.println(score+"  "+maxscore+"  "+joueur+"  "+y+"  li");
+                if ((joueur == 1 && score >= maxscore) || (joueur != 1 && score <= maxscore)) {
+                  //  System.out.println(score+"  "+maxscore+"  "+joueur+"  "+y+"  lala");
                     if (score == maxscore) {
                         if (Math.random() < 0.4) {
                             yRetour = y;
@@ -127,22 +133,38 @@ public class IA {
                     }
 
                 }
+              //  System.out.println("Choisir Coup2 "+y+"  "+joueur);
                 partie.annuler();
             }
         }
+        System.out.println(yRetour+"  "+maxscore+"  "+joueur);
         return yRetour;
     }
     private int ComparerCoup(Partie partie, int i,int joueur){
-        int y,score,maxscore=-999*joueur;
+        int y,score,maxscore=-99999*joueur,ajoutJeton;
         if(i>=difficulte){
             return evaluerCoup(partie,joueur);
         }
         for (y = 0; y < partie.getNombreColone(); y++) {
-            partie.ajouterJeton(joueur, y);
-            score=ComparerCoup(partie, i+1,joueur*-1);
-            if((joueur==1 && score>maxscore)||(joueur!=1 && score<maxscore))
-                maxscore=score;
-            partie.annuler();
+            ajoutJeton=partie.ajouterJeton(joueur, y);
+          //  System.out.println("ComparerCoup1 "+y+"  "+joueur+"  "+ajoutJeton);
+            if(ajoutJeton!=-1) {//si l'ajout a bien eu lieu
+                if(ajoutJeton==1){
+                    partie.annuler();
+                    return (10000*joueur);
+                }
+                if(ajoutJeton==2){
+                    partie.annuler();
+                    return 0;
+                }
+
+                score = ComparerCoup(partie, i + 1, joueur * -1);
+                if ((joueur == 1 && score > maxscore) || (joueur != 1 && score < maxscore)) {
+                    maxscore = score;
+                }
+              //  System.out.println("ComparerCoup2  "+y+"  "+joueur+"  "+ajoutJeton);
+                partie.annuler();
+            }
         }
         return maxscore;
     }

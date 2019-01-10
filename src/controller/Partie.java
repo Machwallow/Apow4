@@ -24,6 +24,7 @@ public class Partie {
         this.nombreLigne = nombreLigne;
         this.alignerGagnant = alignerGagnant;
         Matrice=new int[nombreLigne][nombreColone];
+        listeCoup=new ArrayList<Integer>();
     }
 
     public int getAlignerGagnant() {
@@ -41,17 +42,18 @@ public class Partie {
         int nbAligne;
         boolean gagner;
 
-        while (x<nombreLigne && Matrice[x][y]!=0){
+        while (x<nombreLigne-1 && Matrice[x][y]!=0){
             x=x+1;
         }
-        if(x==nombreLigne)
+        if(x==nombreLigne-1 && Matrice[x][y]!=0)
             return -1;
         listeCoup.add(y);
         Matrice[x][y]=joueur;
-        if(x>=alignerGagnant-1) {
-            i = (x - alignerGagnant-1);
+        if(x>alignerGagnant-1) {
+            i = (x - (alignerGagnant-1));
             gagner=true;
             while (i < x && gagner){
+                //System.out.println(i+"   "+x+"\n");
                 if(Matrice[i][y]!=joueur)
                     gagner=false;
                 i=i+1;
@@ -89,11 +91,13 @@ public class Partie {
             return 1;
 
         nbAligne=0;
-        i=-y;
-        if(x<y)
+        i=nombreColone-y;
+        if(x<nombreColone-y)
             i=-x;
-        while (i-y<nombreColone && i+x<nombreLigne && nbAligne<alignerGagnant){
-            if(Matrice [i+x][i+y]==joueur){
+        //System.out.println(" lalal ");
+        while (i+(nombreColone-y)<nombreColone && i+x<nombreLigne && nbAligne<alignerGagnant){
+            //System.out.println(x+"  "+y+"  "+(i-y)+"  "+(i+(nombreColone-y))+"  "+ (i+x));
+            if(Matrice [i+x][i+(nombreColone-y)]==joueur){
                 nbAligne=nbAligne+1;
             }else{
                 nbAligne=0;
@@ -102,6 +106,7 @@ public class Partie {
         }
         if(nbAligne==alignerGagnant)
             return 1;
+
         if(x==nombreLigne-1){
             i=0;
             boolean plein=true;
@@ -120,11 +125,34 @@ public class Partie {
         if(listeCoup.size()==0)
             return;
         int i =nombreLigne-1;
+        //System.out.println(i+"  "+listeCoup.get(listeCoup.size()-1));
         while(Matrice[i][listeCoup.get(listeCoup.size()-1)]==0){
-            i=i+1;
+            i=i-1;
         }
+        //System.out.println(i+"  "+listeCoup.get(listeCoup.size()-1)+"  "+Matrice[i][listeCoup.get(listeCoup.size()-1)]);
+       // System.out.println(this);
         Matrice[i][listeCoup.get(listeCoup.size()-1)]=0;
         listeCoup.remove(listeCoup.size()-1);
 
+    }
+    public String toString(){
+        int x=0,y=0;
+        String ligne="";
+        String retour="";
+        while(x<nombreLigne){
+            y=0;
+            ligne="";
+            while(y<nombreColone){
+                if(Matrice[x][y]==1 || Matrice[x][y]==0)
+                    ligne=ligne+Matrice[x][y]+"   ";
+                else
+                    ligne=ligne+Matrice[x][y]+"  ";
+                y=y+1;
+            }
+            retour+=ligne+"\n";
+            x=x+1;
+
+        }
+    return retour;
     }
 }
