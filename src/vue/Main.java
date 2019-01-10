@@ -1,5 +1,7 @@
 package vue;
 
+import controller.IA;
+import controller.Partie;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -32,6 +34,25 @@ public class Main extends Application {
 
 
     public static void main(String[] args) {
+
+        Partie partie=new Partie(3,19,3);
+        System.out.println(partie+"\n");
+        IA bot=new IA(9);
+        int equipe=1,i=0,ajoutJeton;
+        ajoutJeton=partie.ajouterJeton(equipe,bot.choisirCoup(partie, equipe));
+        while(i<99999 && ajoutJeton==0){
+            System.out.println("ajoutJeton  "+ajoutJeton);
+            i=i+1;
+            equipe=equipe*-1;
+            System.out.println("LALALALLALALALLALALALALLALALALA");
+            System.out.println(partie+"\n");
+            ajoutJeton=partie.ajouterJeton(equipe,bot.choisirCoup(partie, equipe));
+        }
+        System.out.println("LALALALLALALALLALALALALLALALALA");
+        System.out.println(partie+"\n");
+
+
+
         launch(args);
     }
 }
