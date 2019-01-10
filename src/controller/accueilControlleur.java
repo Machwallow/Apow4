@@ -8,8 +8,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.Locale;
-import java.util.ResourceBundle;
 
 
 public class accueilControlleur {
@@ -24,7 +22,7 @@ public class accueilControlleur {
 
         buttonLocal.setOnMouseClicked(event ->{
             try {
-                AnchorPane pane = FXMLLoader.load(getClass().getResource("../Vue/partieLocal.fxml"));
+                AnchorPane pane = FXMLLoader.load(getClass().getResource("../vue/partieLocal.fxml"));
                 mainPane.getChildren().setAll(pane);
             } catch (IOException e) {
                 e.printStackTrace();
