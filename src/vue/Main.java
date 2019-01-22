@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.util.Locale;
 import java.util.ResourceBundle;
@@ -29,7 +30,12 @@ public class Main extends Application {
         changeLocale(new Locale("fr_FR"));
         primaryStage.setTitle("Apow4");
         primaryStage.setScene(new Scene(root, 300, 275));
+        primaryStage.setResizable(false);
+        //primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.show();
+
+
+
     }
 
 
