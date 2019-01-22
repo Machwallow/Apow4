@@ -11,6 +11,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 
+import java.sql.SQLOutput;
 import java.util.Stack;
 
 
@@ -55,7 +56,7 @@ public class PartieGrilleControlleur {
             mainGrid.getRowConstraints().add(rowConstraint);
         }
         for (int i = 0; i < nbColonnes; i++){
-            grille[i] = nbColonnes-1;
+            grille[i] = nbLignes;
             mainGrid.addColumn(i);
             mainGrid.getColumnConstraints().add(columnConstraint);
 
@@ -65,8 +66,8 @@ public class PartieGrilleControlleur {
 
 
 
-        for (int i = 0; i < nbColonnes; i++)
-            for (int j = 0; j < nbLignes; j++){
+        for (int i = 0; i < nbLignes; i++)
+            for (int j = 0; j < nbColonnes; j++){
                 /*
                 ImageView ivj1 = new ImageView(new Image("ressources/black.png"));
                 ivj1.setFitWidth(55);
@@ -85,7 +86,7 @@ public class PartieGrilleControlleur {
 
     }
 
-    public void addPane(int indexColonne, int indexLigne){
+    public void addPane(int indexLigne, int indexColonne){
         StackPane stackPane = new StackPane();
        /*
         pane.setOnMouseEntered(e -> {
@@ -94,7 +95,7 @@ public class PartieGrilleControlleur {
         */
         stackPane.setOnMouseClicked(e -> {
             if(grille[indexColonne]>=0) {
-                ObservableList<Node> children = mainGrid.getChildren();
+                /*ObservableList<Node> children = mainGrid.getChildren();
                 Node result = null;
                 for (Node node : children) {
                     if(GridPane.getRowIndex(node) == grille[indexColonne] && GridPane.getColumnIndex(node) == indexColonne) {
@@ -102,14 +103,17 @@ public class PartieGrilleControlleur {
                         break;
                     }
                 }
-                StackPane coupPane = (StackPane) result;
-                coupPane.getChildren().add(new ImageView(new Image("ressources/red.png")));
+                StackPane coupPane = (StackPane) result;*/
+                //coupPane.getChildren().add(new ImageView(new Image("ressources/red.png")));
                 // System.out.printf(grille[indexColonne]+"  "+nbColonnes+"  "+indexColonne);
-
-            //   StackPane coupPane = (StackPane) mainGrid.getChildren().get(((grille[indexColonne]) * nbColonnes) - indexColonne);
+                ImageView ivj1 = new ImageView(new Image("ressources/red.png"));
+                ivj1.setFitWidth(55);
+                ivj1.setFitHeight(36);
+               StackPane coupPane = (StackPane) mainGrid.getChildren().get(((grille[indexColonne]-1) * nbColonnes) +1 + indexColonne);
+                System.out.println(((grille[indexColonne]-1) * nbColonnes) +1 + indexColonne);
                 System.out.printf("Mouse enetered cell [%d, %d]%n", indexColonne, indexLigne);
 
-             //   coupPane.getChildren().add(new ImageView(new Image("ressources/red.png")));
+                coupPane.getChildren().add(ivj1);
                 StackPane.setAlignment(coupPane.getChildren().get(0), Pos.CENTER);
                 grille[indexColonne]--;
             }
