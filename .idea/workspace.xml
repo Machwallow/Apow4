@@ -1,17 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="min max randomisation et correction de bug">
-      <change afterPath="$PROJECT_DIR$/src/controller/PartieGrilleControlleur.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/vue/partieGrille.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/vue/partieGrille2.fxml" afterDir="false" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Ajout de l'interface de grille, ajout de différentes classes d'utilitaire">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/Joueur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/Joueur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/PartieLocaleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/PartieLocaleControlleur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/accueilControlleur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/AccueilControlleur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vue/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vue/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vue/accueil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/vue/accueil.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vue/partieLocal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/vue/partieLocal.fxml" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -104,8 +95,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/controller/PartieGrilleControlleur.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
-              <caret line="112" column="14" lean-forward="true" selection-start-line="112" selection-start-column="14" selection-end-line="112" selection-end-column="14" />
+            <state relative-caret-position="175">
+              <caret line="94" column="42" lean-forward="true" selection-start-line="94" selection-start-column="42" selection-end-line="94" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3157#3158#0" expanded="true" />
@@ -210,6 +201,11 @@
     </FindUsagesManager>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Stan &lt;stanislasmonnier@hotmail.fr&gt;" />
+      </list>
+    </option>
     <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -236,8 +232,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-5" />
-    <option name="width" value="2328" />
+    <option name="x" value="-6" />
+    <option name="width" value="2329" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -299,7 +295,7 @@
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548162075490" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548238414639" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="C:/Program Files/Git/cmd/git.exe" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -412,7 +408,7 @@
       <workItem from="1545143218732" duration="11932000" />
       <workItem from="1545290834082" duration="12843000" />
       <workItem from="1546623706097" duration="26069000" />
-      <workItem from="1548129902618" duration="14411000" />
+      <workItem from="1548129902618" duration="16641000" />
     </task>
     <task id="LOCAL-00001" summary="creation dossier mvc">
       <created>1545144979208</created>
@@ -505,17 +501,24 @@
       <option name="project" value="LOCAL" />
       <updated>1546800247625</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Ajout de l'interface de grille, ajout de différentes classes d'utilitaire">
+      <created>1548162202980</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1548162202980</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68653000" />
+    <option name="totallyTimeSpent" value="70883000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-5" y="0" width="2328" height="1047" extended-state="0" />
+    <frame x="-6" y="0" width="2329" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.10273369" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.10268841" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -524,7 +527,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.42669585" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.28446388" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39934355" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -606,7 +609,8 @@
     <MESSAGE value="heuristique IA" />
     <MESSAGE value="min max" />
     <MESSAGE value="min max randomisation et correction de bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="min max randomisation et correction de bug" />
+    <MESSAGE value="Ajout de l'interface de grille, ajout de différentes classes d'utilitaire" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout de l'interface de grille, ajout de différentes classes d'utilitaire" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -707,8 +711,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/PartieGrilleControlleur.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="112" column="14" lean-forward="true" selection-start-line="112" selection-start-column="14" selection-end-line="112" selection-end-column="14" />
+        <state relative-caret-position="175">
+          <caret line="94" column="42" lean-forward="true" selection-start-line="94" selection-start-column="42" selection-end-line="94" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#3157#3158#0" expanded="true" />
