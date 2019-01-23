@@ -14,7 +14,9 @@ import java.io.IOException;
 
 public class PartieGrilleControlleur {
 
-    private static int nbLignes, nbColonnes;
+    private static int nbLignes, nbColonnes, nombreVictoire, alignerGagnant;
+    private static Joueur[] joueurs = new Joueur[2];
+    private static Jeu jeuActuel;
     @FXML
     public AnchorPane mainPane;
     @FXML
@@ -25,9 +27,8 @@ public class PartieGrilleControlleur {
     public BorderPane mainBorder;
     private GridPane mainGrid;
     private int[] grille;
-    private Joueur[] joueurs = new Joueur[2];
     private int jActuel = 0;
-    private static Jeu jeuActuel;
+
 
     @FXML
     private void initialize() {
@@ -149,6 +150,19 @@ public class PartieGrilleControlleur {
 
     public static void setNbColonnes(int nb){
         nbColonnes = nb;
+    }
+
+    public static void setNombreVictoire(int nv){
+        nombreVictoire = nv;
+    }
+
+    public static void setAlignerGagnant(int ag){
+        alignerGagnant = ag;
+    }
+
+    public static void setJoueurs(Joueur j1, Joueur j2){
+        joueurs[0] = j1;
+        joueurs[1] = j2;
     }
 
 }
