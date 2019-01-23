@@ -98,7 +98,7 @@ public class IA {
         }
         if(prochainJoueur==1){
             if(nombreGagnantJ1>=1)
-                evaluation=9000; // 900 c'est beaucoup
+                evaluation=9000; // 900 c'est beaucoup // c'est 9000 là c'est chaud
             else{
                 if(nombreGagnantJ2>=2)
                     evaluation=-9000;

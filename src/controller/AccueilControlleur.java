@@ -28,7 +28,7 @@ public class AccueilControlleur {
             try {
                 //Définir nbLignes/nbColonnes avant de changer la fenêtre
                 PartieGrilleControlleur.setNbLignes(6);
-                PartieGrilleControlleur.setNbColonnes(7);
+                PartieGrilleControlleur.setNbColonnes(9);
 
                 //Permet de changer la taille de la fenêtre et de la center au milieu de l'écran ensuite
                 Stage stage = (Stage)mainPane.getScene().getWindow();

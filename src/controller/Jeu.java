@@ -7,7 +7,6 @@ public class Jeu {
     private int scoreJ1;
     private int scoreJ2;
     Joueur j1,j2;
-    String ImgJ1,ImgJ2;
     ArrayList<Partie> parties;
 
     public Jeu(int nombreVictoire) {
@@ -16,13 +15,12 @@ public class Jeu {
         this.nombreVictoire = nombreVictoire;
     }
 
-    public Jeu(int nombreVictoire, Joueur j1, Joueur j2, String imgJ1, String imgJ2) {
+    public Jeu(int nombreVictoire, Joueur j1, Joueur j2) {
         this.nombreVictoire = nombreVictoire;
         this.j1 = j1;
         this.j2 = j2;
-        ImgJ1 = imgJ1;
-        ImgJ2 = imgJ2;
-        this.nombreVictoire = nombreVictoire;
+        scoreJ1=0;
+        scoreJ2=0;
     }
 
     public void nouvellePartie(int nombreColone, int nombreLigne , int alignerGagnant){
@@ -31,4 +29,27 @@ public class Jeu {
     public boolean jeuFini(){
         return(scoreJ1==nombreVictoire || scoreJ2==nombreVictoire);
     }
+
+    public Partie getPartie(){
+        return parties.get(parties.size() - 1);
+    }
+
+    public int victoireJ1(){
+        //retourne 1 si le joueur1 a gagné le jeu
+        //0 sinon
+        scoreJ1++;
+        if (jeuFini())
+            return 1;
+        return 0;
+    }
+
+    public int victoireJ2(){
+        //retourne 2 si le joueur2 a gagné le jeu
+        //0 sinon
+        scoreJ2++;
+        if (jeuFini())
+            return 1;
+        return 0;
+    }
+
 }

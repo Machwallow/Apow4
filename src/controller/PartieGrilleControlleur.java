@@ -1,33 +1,33 @@
 package controller;
 
 
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.geometry.HPos;
 import javafx.geometry.Pos;
-import javafx.geometry.VPos;
-import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
-
-import java.util.Stack;
 
 
 public class PartieGrilleControlleur {
 
     private static int nbLignes, nbColonnes;
-    public GridPane mainGrid;
+    private GridPane mainGrid;
     @FXML
     public BorderPane mainBorder;
     private int[] grille;
     private Joueur[] joueurs = new Joueur[2];
-
+    private static int jActuel = 0;
+    private static Jeu jeuActuel;
 
     @FXML
     private void initialize() {
 
 
+        joueurs[0] = new Joueur("ressources/red.png");
+        joueurs[1] = new Joueur("ressources/black.png");
+        if (jeuActuel == null)
+            jeuActuel = new Jeu(5, joueurs[0], joueurs[1]);
+        jeuActuel.nouvellePartie(nbLignes,nbColonnes,5);
         genererGrille(nbLignes, nbColonnes);
 
 
@@ -37,9 +37,6 @@ public class PartieGrilleControlleur {
         mainGrid = new GridPane();
         mainGrid.setGridLinesVisible(true);
         grille = new int[nbColonnes];
-
-
-        //images 61x40 Maxi
 
         mainGrid.setMinSize(854, 480);
         mainGrid.setPrefSize(854, 480);
@@ -54,27 +51,16 @@ public class PartieGrilleControlleur {
             mainGrid.addRow(i);
             mainGrid.getRowConstraints().add(rowConstraint);
         }
+
         for (int i = 0; i < nbColonnes; i++){
-            grille[i] = nbColonnes-1;
+            grille[i] = nbLignes-1;
             mainGrid.addColumn(i);
             mainGrid.getColumnConstraints().add(columnConstraint);
 
         }
-       // ImageView ivj1 = new ImageView(new Image("ressources/black.png"));
-        ImageView ivj2 = new ImageView(new Image("ressources/red.png"));
 
-
-
-        for (int i = 0; i < nbColonnes; i++)
-            for (int j = 0; j < nbLignes; j++){
-                /*
-                ImageView ivj1 = new ImageView(new Image("ressources/black.png"));
-                ivj1.setFitWidth(55);
-                ivj1.setFitHeight(36);
-                mainGrid.add(ivj1, i, j);
-                GridPane.setHalignment(ivj1, HPos.CENTER);
-                GridPane.setValignment(ivj1, VPos.CENTER);
-                */
+        for (int i = 0; i < nbLignes; i++)
+            for (int j = 0; j < nbColonnes; j++){
                 addPane(i,j);
             }
 
@@ -85,38 +71,46 @@ public class PartieGrilleControlleur {
 
     }
 
-    public void addPane(int indexColonne, int indexLigne){
+    private void addPane(int indexLigne, int indexColonne){
         StackPane stackPane = new StackPane();
-       /*
-        pane.setOnMouseEntered(e -> {
-            System.out.printf("Mouse enetered cell [%d, %d]%n", indexColonne, indexLigne);
-        });
-        */
         stackPane.setOnMouseClicked(e -> {
             if(grille[indexColonne]>=0) {
-                ObservableList<Node> children = mainGrid.getChildren();
-                Node result = null;
-                for (Node node : children) {
-                    if(GridPane.getRowIndex(node) == grille[indexColonne] && GridPane.getColumnIndex(node) == indexColonne) {
-                        result = (StackPane)node;
-                        break;
-                    }
-                }
-                StackPane coupPane = (StackPane) result;
-                coupPane.getChildren().add(new ImageView(new Image("ressources/red.png")));
-                // System.out.printf(grille[indexColonne]+"  "+nbColonnes+"  "+indexColonne);
+                ImageView jetonJActuel = new ImageView(new Image(joueurs[jActuel].getImg()));
+                jetonJActuel.setFitWidth(55);
+                jetonJActuel.setFitHeight(36);
+                StackPane coupPane = (StackPane) mainGrid.getChildren().get(((grille[indexColonne]) * nbColonnes) +1 + indexColonne);
 
-            //   StackPane coupPane = (StackPane) mainGrid.getChildren().get(((grille[indexColonne]) * nbColonnes) - indexColonne);
-                System.out.printf("Mouse enetered cell [%d, %d]%n", indexColonne, indexLigne);
+                System.out.println(((grille[indexColonne]-1) * nbColonnes) +1 + indexColonne);
+                System.out.printf("Mouse entered cell [%d, %d]%n", indexColonne, indexLigne);
 
-             //   coupPane.getChildren().add(new ImageView(new Image("ressources/red.png")));
+                coupPane.getChildren().add(jetonJActuel);
                 StackPane.setAlignment(coupPane.getChildren().get(0), Pos.CENTER);
                 grille[indexColonne]--;
+                System.out.println(jActuel);
+                int resultatCoup;
+                if (jActuel == 0) {
+                    resultatCoup = jeuActuel.getPartie().ajouterJeton(1, indexColonne);
+                    jActuel++;
+                }
+                else {
+                    resultatCoup = jeuActuel.getPartie().ajouterJeton(-1, indexColonne)+5;
+                    jActuel--;
+                }
+
+                int resultatPartie;
+                switch (resultatCoup){
+                    case 1: resultatPartie = jeuActuel.victoireJ1(); break;
+                    case 2: resultatPartie = -1; break;
+                    case 5: resultatPartie = jeuActuel.victoireJ2(); break;
+                    default: resultatPartie = 0; break;
+                }
+
+                //switch (resultatPartie){
+
+                //}
             }
         });
-
         mainGrid.add(stackPane, indexColonne, indexLigne);
-
     }
 
     public static void setNbLignes(int nb){
