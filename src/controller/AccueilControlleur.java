@@ -3,14 +3,18 @@ package controller;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
+import javafx.scene.Group;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 
-public class accueilControlleur {
+public class AccueilControlleur {
     public Button buttonOnline;
     public Button buttonLocal;
     public Button buttonRules;
@@ -22,7 +26,13 @@ public class accueilControlleur {
 
         buttonLocal.setOnMouseClicked(event ->{
             try {
-                AnchorPane pane = FXMLLoader.load(getClass().getResource("../vue/partieLocal.fxml"));
+                   //Permet de changer la taille de la fenêtre et de la center au milieu de l'écran ensuite
+                Stage stage = (Stage)mainPane.getScene().getWindow();
+                stage.setWidth(800);
+                stage.setHeight(800);
+                Services.centrerFenetre(stage);
+
+                AnchorPane pane = FXMLLoader.load(getClass().getResource("../vue/setupLocal.fxml"));
                 mainPane.getChildren().setAll(pane);
             } catch (IOException e) {
                 e.printStackTrace();

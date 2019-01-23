@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.util.Locale;
 import java.util.ResourceBundle;
@@ -29,13 +30,18 @@ public class Main extends Application {
         changeLocale(new Locale("fr_FR"));
         primaryStage.setTitle("Apow4");
         primaryStage.setScene(new Scene(root, 300, 275));
+        primaryStage.setResizable(false);
+        //primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.show();
+
+
+
     }
 
 
     public static void main(String[] args) {
 
-        Partie partie=new Partie(3,19,3);
+       /* Partie partie=new Partie(3,19,3);
         System.out.println(partie+"\n");
         IA bot=new IA(9);
         int equipe=1,i=0,ajoutJeton;
@@ -49,7 +55,7 @@ public class Main extends Application {
             ajoutJeton=partie.ajouterJeton(equipe,bot.choisirCoup(partie, equipe));
         }
         System.out.println("LALALALLALALALLALALALALLALALALA");
-        System.out.println(partie+"\n");
+        System.out.println(partie+"\n");*/
 
 
 
