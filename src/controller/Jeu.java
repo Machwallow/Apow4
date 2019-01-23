@@ -21,11 +21,13 @@ public class Jeu {
         this.j2 = j2;
         scoreJ1=0;
         scoreJ2=0;
+        parties = new ArrayList<>();
     }
 
     public void nouvellePartie(int nombreColone, int nombreLigne , int alignerGagnant){
         parties.add(new Partie(nombreColone,nombreLigne,alignerGagnant));
     }
+
     public boolean jeuFini(){
         return(scoreJ1==nombreVictoire || scoreJ2==nombreVictoire);
     }
@@ -36,20 +38,27 @@ public class Jeu {
 
     public int victoireJ1(){
         //retourne 1 si le joueur1 a gagné le jeu
-        //0 sinon
+        //3 sinon
         scoreJ1++;
         if (jeuFini())
             return 1;
-        return 0;
+        return 3;
     }
 
     public int victoireJ2(){
         //retourne 2 si le joueur2 a gagné le jeu
-        //0 sinon
+        //3 sinon
         scoreJ2++;
         if (jeuFini())
             return 1;
-        return 0;
+        return 3;
     }
 
+    public int getScoreJ1() {
+        return scoreJ1;
+    }
+
+    public int getScoreJ2() {
+        return scoreJ2;
+    }
 }

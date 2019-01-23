@@ -39,7 +39,6 @@ public class AccueilControlleur {
                 stage.setY((screenBounds.getHeight() - stage.getHeight()) / 2);
 
                 AnchorPane pane = FXMLLoader.load(getClass().getResource("../vue/partieGrille.fxml"));
-
                 mainPane.getChildren().setAll(pane);
             } catch (IOException e) {
                 e.printStackTrace();

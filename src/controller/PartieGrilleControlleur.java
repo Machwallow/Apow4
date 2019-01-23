@@ -2,21 +2,31 @@ package controller;
 
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
+
+import java.io.IOException;
 
 
 public class PartieGrilleControlleur {
 
     private static int nbLignes, nbColonnes;
-    private GridPane mainGrid;
+    @FXML
+    public AnchorPane mainPane;
+    @FXML
+    public Label labelScoreJ1;
+    @FXML
+    public Label labelScoreJ2;
     @FXML
     public BorderPane mainBorder;
+    private GridPane mainGrid;
     private int[] grille;
     private Joueur[] joueurs = new Joueur[2];
-    private static int jActuel = 0;
+    private int jActuel = 0;
     private static Jeu jeuActuel;
 
     @FXML
@@ -26,10 +36,11 @@ public class PartieGrilleControlleur {
         joueurs[0] = new Joueur("ressources/red.png");
         joueurs[1] = new Joueur("ressources/black.png");
         if (jeuActuel == null)
-            jeuActuel = new Jeu(5, joueurs[0], joueurs[1]);
-        jeuActuel.nouvellePartie(nbLignes,nbColonnes,5);
+            jeuActuel = new Jeu(4, joueurs[0], joueurs[1]);
+        jeuActuel.nouvellePartie(nbColonnes, nbLignes,5);
         genererGrille(nbLignes, nbColonnes);
-
+        labelScoreJ1.setText("Score joueur 1:  "+jeuActuel.getScoreJ1());
+        labelScoreJ2.setText("Score joueur 2:  "+jeuActuel.getScoreJ2());
 
     }
 
@@ -64,11 +75,8 @@ public class PartieGrilleControlleur {
                 addPane(i,j);
             }
 
-
-
         mainBorder.setCenter(mainGrid);
         mainGrid.setAlignment(Pos.CENTER);
-
     }
 
     private void addPane(int indexLigne, int indexColonne){
@@ -96,21 +104,43 @@ public class PartieGrilleControlleur {
                     resultatCoup = jeuActuel.getPartie().ajouterJeton(-1, indexColonne)+5;
                     jActuel--;
                 }
-
-                int resultatPartie;
+                System.out.println("rc = "+resultatCoup);
+                int resultatPartie = 0;
                 switch (resultatCoup){
                     case 1: resultatPartie = jeuActuel.victoireJ1(); break;
                     case 2: resultatPartie = -1; break;
-                    case 5: resultatPartie = jeuActuel.victoireJ2(); break;
-                    default: resultatPartie = 0; break;
+                    case 6: resultatPartie = jeuActuel.victoireJ2(); break;
+                }
+                System.out.println("rp = "+resultatPartie);
+                switch (resultatPartie){
+                    case -1:
+                        System.out.println("-1");
+                        nouvellePartie();
+                        break;
+                    case 3:
+                        System.out.println("-1");
+                        nouvellePartie();
+                        break;
+                    case 1:
+                        //TODO J1 wins
+                        break;
+                    case 2:
+                        //TODO J2 wins
+                        break;
                 }
 
-                //switch (resultatPartie){
-
-                //}
             }
         });
         mainGrid.add(stackPane, indexColonne, indexLigne);
+    }
+
+    private void nouvellePartie() {
+        try {
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("../vue/partieGrille.fxml"));
+            mainPane.getChildren().setAll(pane);
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        }
     }
 
     public static void setNbLignes(int nb){
@@ -120,8 +150,5 @@ public class PartieGrilleControlleur {
     public static void setNbColonnes(int nb){
         nbColonnes = nb;
     }
-
-
-
 
 }
