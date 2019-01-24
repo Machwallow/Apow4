@@ -49,7 +49,7 @@ public class Partie {
             return -1;
         listeCoup.add(y);
         Matrice[x][y]=joueur;
-        if(x>alignerGagnant-1) {
+        if(x>=alignerGagnant-1) {
             i = (x - (alignerGagnant-1));
             gagner=true;
             while (i < x && gagner){
@@ -96,8 +96,8 @@ public class Partie {
             i=-x;
         //System.out.println(" lalal ");
         while (i+(nombreColone-y)<nombreColone && i+x<nombreLigne && nbAligne<alignerGagnant){
-            //System.out.println(x+"  "+y+"  "+(i-y)+"  "+(i+(nombreColone-y))+"  "+ (i+x));
-            if(Matrice [i+x][i+(nombreColone-y)]==joueur){
+            System.out.println(x+"  "+y+"  "+(y-i)+"  "+ (i+x)+"  "+(i+(nombreColone-y)));
+            if(Matrice [i+x][y-i]==joueur){
                 nbAligne=nbAligne+1;
             }else{
                 nbAligne=0;

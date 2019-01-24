@@ -41,7 +41,7 @@ public class Main extends Application {
 
     public static void main(String[] args) {
 
-        Partie partie=new Partie(3,19,3);
+       /* Partie partie=new Partie(3,19,3);
         System.out.println(partie+"\n");
         IA bot=new IA(9);
         int equipe=1,i=0,ajoutJeton;
@@ -55,7 +55,7 @@ public class Main extends Application {
             ajoutJeton=partie.ajouterJeton(equipe,bot.choisirCoup(partie, equipe));
         }
         System.out.println("LALALALLALALALLALALALALLALALALA");
-        System.out.println(partie+"\n");
+        System.out.println(partie+"\n");*/
 
 
 
