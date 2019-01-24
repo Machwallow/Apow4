@@ -20,25 +20,29 @@ public class PartieLocaleControlleur {
     public Button buttonLoad;
     public Button buttonBack;
     public AnchorPane mainPane;
+    private static ResourceBundle bundle;
 
     @FXML
     private void initialize() {
       /*  buttonQuit.setOnMouseClicked(event -> {
 
         });*/
+        try {
+            Stage stage = (Stage)mainPane.getScene().getWindow();
+            stage.setWidth(800);
+            stage.setHeight(800);
+            Services.centrerFenetre(stage);
 
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("../vue/setupLocal.fxml"));
+            ResourceBundle bundle = ResourceBundle.getBundle("bundles.bundle.bundle", Locale.getDefault());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void backButton() throws IOException {
 
-
-        ResourceBundle bundle = ResourceBundle.getBundle("bundles.bundle", Locale.getDefault());
-
-        Scene scene = buttonBack.getScene();
-      //  Window window = scene.getWindow();
-     //   Stage stage = (Stage) window;
-
-        mainPane = FXMLLoader.load(getClass().getResource("accueil.fxml"),bundle);
+//        mainPane = FXMLLoader.load(getClass().getResource("accueil.fxml"),bundle);
     }
 
 

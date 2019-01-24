@@ -13,6 +13,7 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.util.ResourceBundle;
 
 public class SetupLocalControlleur {
 
@@ -22,6 +23,7 @@ public class SetupLocalControlleur {
     public CheckBox checkTriche;
     public TextField textLignes, textColonnes, textPower, textMaxScore;
     public AnchorPane mainPane;
+    private static ResourceBundle bundle;
 
     private static Joueur[] joueurs = new Joueur[2];
 

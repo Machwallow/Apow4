@@ -37,8 +37,8 @@ public class PartieGrilleControlleur {
         joueurs[0] = new Joueur("ressources/red.png");
         joueurs[1] = new Joueur("ressources/black.png");
         if (jeuActuel == null)
-            jeuActuel = new Jeu(4, joueurs[0], joueurs[1]);
-        jeuActuel.nouvellePartie(nbColonnes, nbLignes,5);
+            jeuActuel = new Jeu(nombreVictoire, joueurs[0], joueurs[1]);
+        jeuActuel.nouvellePartie(nbColonnes, nbLignes,alignerGagnant);
         genererGrille(nbLignes, nbColonnes);
         labelScoreJ1.setText("Score joueur 1:  "+jeuActuel.getScoreJ1());
         labelScoreJ2.setText("Score joueur 2:  "+jeuActuel.getScoreJ2());
