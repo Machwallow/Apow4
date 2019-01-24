@@ -18,8 +18,8 @@
         <items>
           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="530.0" prefWidth="798.0">
                <children>
-                  <Button fx:id="buttonChooserJ1" layoutX="351.0" layoutY="156.0" mnemonicParsing="false" text="Image joueur 1" />
-                  <Button fx:id="buttonChooserJ2" layoutX="351.0" layoutY="231.0" mnemonicParsing="false" text="Image joueur 2" />
+                  <Button fx:id="buttonChooserJ1" layoutX="351.0" layoutY="156.0" mnemonicParsing="false" text="%img1" />
+                  <Button fx:id="buttonChooserJ2" layoutX="351.0" layoutY="231.0" mnemonicParsing="false" text="%img2" />
                   <ImageView fx:id="imageJ1" fitHeight="150.0" fitWidth="200.0" layoutX="30.0" layoutY="181.0" pickOnBounds="true" preserveRatio="true" />
                   <ImageView fx:id="imageJ2" fitHeight="150.0" fitWidth="200.0" layoutX="572.0" layoutY="181.0" pickOnBounds="true" preserveRatio="true" />
                </children></AnchorPane>
@@ -40,16 +40,16 @@
                                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                 </rowConstraints>
                                  <children>
-                                    <CheckBox fx:id="checkTriche" mnemonicParsing="false" text="Triche autorisée" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                                    <TextField fx:id="textLignes" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="62.0" promptText="Lignes" text="6" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                                    <CheckBox fx:id="checkTriche" mnemonicParsing="false" text="%cheating" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                    <TextField fx:id="textLignes" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="62.0" promptText="%lines" text="6" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="TOP">
                                        <GridPane.margin>
                                           <Insets right="3.0" top="5.0" />
                                        </GridPane.margin></TextField>
-                                    <TextField fx:id="textColonnes" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="62.0" promptText="Colonne" text="7" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                                    <TextField fx:id="textColonnes" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="62.0" promptText="%columns" text="7" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.valignment="TOP">
                                        <GridPane.margin>
                                           <Insets left="3.0" top="5.0" />
                                        </GridPane.margin></TextField>
-                                    <Label text="Taille fenetre:" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" />
+                                    <Label text="%gridSize" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" />
                                  </children>
                               </GridPane>
                            </children></AnchorPane>
@@ -68,12 +68,12 @@
                                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                 </rowConstraints>
                                  <children>
-                                    <Label text="Puissance" GridPane.halignment="RIGHT" GridPane.valignment="BOTTOM">
+                                    <Label text="%power" GridPane.halignment="RIGHT" GridPane.valignment="BOTTOM">
                                        <GridPane.margin>
                                           <Insets bottom="4.0" right="5.0" />
                                        </GridPane.margin>
                                     </Label>
-                                    <Label text="Score" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                                    <Label text="%score" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="TOP">
                                        <GridPane.margin>
                                           <Insets right="5.0" top="4.0" />
                                        </GridPane.margin>
@@ -88,7 +88,7 @@
                                           <Insets left="5.0" />
                                        </GridPane.margin>
                                     </TextField>
-                                    <Button fx:id="buttonLancer" mnemonicParsing="false" text="Lancer partie" GridPane.columnIndex="2" GridPane.rowIndex="3" GridPane.valignment="TOP" />
+                                    <Button fx:id="buttonLancer" mnemonicParsing="false" text="%startGame" GridPane.columnIndex="2" GridPane.rowIndex="3" GridPane.valignment="TOP" />
                                  </children>
                               </GridPane>
                            </children></AnchorPane>

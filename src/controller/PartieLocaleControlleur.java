@@ -2,15 +2,10 @@ package controller;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-
-import java.io.IOException;
-import java.util.Locale;
-import java.util.ResourceBundle;
+import vue.Main;
 
 public class PartieLocaleControlleur {
 
@@ -20,29 +15,46 @@ public class PartieLocaleControlleur {
     public Button buttonLoad;
     public Button buttonBack;
     public AnchorPane mainPane;
-    private static ResourceBundle bundle;
 
     @FXML
     private void initialize() {
-      /*  buttonQuit.setOnMouseClicked(event -> {
-
-        });*/
-        try {
-            Stage stage = (Stage)mainPane.getScene().getWindow();
-            stage.setWidth(800);
-            stage.setHeight(800);
-            Services.centrerFenetre(stage);
-
-            AnchorPane pane = FXMLLoader.load(getClass().getResource("../vue/setupLocal.fxml"));
-            ResourceBundle bundle = ResourceBundle.getBundle("bundles.bundle.bundle", Locale.getDefault());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        setupButtonSplit();
+        setupButtonBack();
     }
 
-    public void backButton() throws IOException {
+    private void setupButtonSplit(){
+        buttonSplit.setOnMouseClicked(event -> {
+            Stage stage = Main.stage1;
+            Services.setupFenetre(Services.WIDTH_SETUP, Services.HEIGHT_SETUP, stage);
+            try {
+                AnchorPane pane = FXMLLoader.load(getClass().getResource("../vue/setupLocal.fxml"), Services.getBundle());
+                mainPane.getChildren().setAll(pane);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+    }
 
-//        mainPane = FXMLLoader.load(getClass().getResource("accueil.fxml"),bundle);
+    private void setupButtonIA(){
+        buttonIA.setOnMouseClicked(event -> {
+            //TODO Lancement partie IA
+        });
+    }
+
+    private void setupButtonLoad(){
+        buttonLoad.setOnMouseClicked(event -> {
+            //TODO Chargement des parties
+        });
+    }
+    private void setupButtonBack(){
+        buttonBack.setOnMouseClicked(event -> {
+            try {
+                AnchorPane pane = FXMLLoader.load(getClass().getResource("../vue/accueil.fxml"), Services.getBundle());
+                mainPane.getChildren().setAll(pane);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
     }
 
 

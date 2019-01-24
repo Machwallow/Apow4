@@ -13,7 +13,6 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
-import java.util.ResourceBundle;
 
 public class SetupLocalControlleur {
 
@@ -23,13 +22,11 @@ public class SetupLocalControlleur {
     public CheckBox checkTriche;
     public TextField textLignes, textColonnes, textPower, textMaxScore;
     public AnchorPane mainPane;
-    private static ResourceBundle bundle;
 
     private static Joueur[] joueurs = new Joueur[2];
 
     @FXML
     private void initialize() {
-
         setupButtonChooser(0, imageJ1, buttonChooserJ1);
         setupButtonChooser(1, imageJ2, buttonChooserJ2);
         setupButtonLancer();
@@ -47,10 +44,10 @@ public class SetupLocalControlleur {
             if (fichier != null) {
                 try {
                     iv.setImage(new Image(fichier.toURI().toURL().toExternalForm()));
+                    joueurs[numeroJoueur] = new Joueur(fichier.toURI().toURL().toExternalForm());
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
                 }
-                joueurs[numeroJoueur] = new Joueur(fichier.getAbsolutePath());
             }
         });
     }
@@ -58,6 +55,7 @@ public class SetupLocalControlleur {
     private void setupButtonLancer(){
         buttonLancer.setOnMouseClicked(event ->{
             try {
+                System.out.println(mainPane.getScene());
                 //Définir nbLignes,nbColonnes, alignerGagnat, nbVictoire et les joueurs avant de changer la fenêtre
                 PartieGrilleControlleur.setNbLignes(Integer.parseInt(textLignes.getText()));
                 PartieGrilleControlleur.setNbColonnes(Integer.parseInt(textColonnes.getText()));
@@ -67,11 +65,11 @@ public class SetupLocalControlleur {
 
                 //Permet de changer la taille de la fenêtre et de la center au milieu de l'écran
                 Stage stage = (Stage)mainPane.getScene().getWindow();
-                stage.setWidth(1280);
-                stage.setHeight(720);
+                stage.setWidth(Services.WIDTH_GAME);
+                stage.setHeight(Services.HEIGHT_GAME);
                 Services.centrerFenetre(stage);
 
-                AnchorPane pane = FXMLLoader.load(getClass().getResource("../vue/partieGrille.fxml"));
+                AnchorPane pane = FXMLLoader.load(getClass().getResource("../vue/partieGrille.fxml"), Services.getBundle());
                 mainPane.getChildren().setAll(pane);
             } catch (IOException e) {
                 e.printStackTrace();

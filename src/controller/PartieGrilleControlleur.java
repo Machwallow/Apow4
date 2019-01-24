@@ -14,6 +14,7 @@ import java.io.IOException;
 
 public class PartieGrilleControlleur {
 
+    public final static int WIDTH_GRID = 854, HEIGHT_GRID = 480;
     private static int nbLignes, nbColonnes, nombreVictoire, alignerGagnant;
     private static Joueur[] joueurs = new Joueur[2];
     private static Jeu jeuActuel;
@@ -32,16 +33,13 @@ public class PartieGrilleControlleur {
 
     @FXML
     private void initialize() {
-
-
-        joueurs[0] = new Joueur("ressources/red.png");
-        joueurs[1] = new Joueur("ressources/black.png");
         if (jeuActuel == null)
             jeuActuel = new Jeu(nombreVictoire, joueurs[0], joueurs[1]);
         jeuActuel.nouvellePartie(nbColonnes, nbLignes,alignerGagnant);
         genererGrille(nbLignes, nbColonnes);
-        labelScoreJ1.setText("Score joueur 1:  "+jeuActuel.getScoreJ1());
-        labelScoreJ2.setText("Score joueur 2:  "+jeuActuel.getScoreJ2());
+        System.out.println(Services.getBundle().getLocale());
+        labelScoreJ1.setText(Services.getBundle().getString("scoreJ1")+"  "+jeuActuel.getScoreJ1());
+        labelScoreJ2.setText(Services.getBundle().getString("scoreJ2")+"  "+jeuActuel.getScoreJ2());
 
     }
 
@@ -50,9 +48,9 @@ public class PartieGrilleControlleur {
         mainGrid.setGridLinesVisible(true);
         grille = new int[nbColonnes];
 
-        mainGrid.setMinSize(854, 480);
-        mainGrid.setPrefSize(854, 480);
-        mainGrid.setMaxSize(854, 480);
+        mainGrid.setMinSize(WIDTH_GRID, HEIGHT_GRID);
+        mainGrid.setPrefSize(WIDTH_GRID, HEIGHT_GRID);
+        mainGrid.setMaxSize(WIDTH_GRID, HEIGHT_GRID);
 
         ColumnConstraints columnConstraint = new ColumnConstraints();
         columnConstraint.setPercentWidth(100/nbColonnes);
@@ -85,8 +83,8 @@ public class PartieGrilleControlleur {
         stackPane.setOnMouseClicked(e -> {
             if(grille[indexColonne]>=0) {
                 ImageView jetonJActuel = new ImageView(new Image(joueurs[jActuel].getImg()));
-                jetonJActuel.setFitWidth(55);
-                jetonJActuel.setFitHeight(36);
+                jetonJActuel.setFitWidth(Services.WIDTH_TOKEN);
+                jetonJActuel.setFitHeight(Services.HEIGHT_TOKEN);
                 StackPane coupPane = (StackPane) mainGrid.getChildren().get(((grille[indexColonne]) * nbColonnes) +1 + indexColonne);
 
                 System.out.println(((grille[indexColonne]-1) * nbColonnes) +1 + indexColonne);
@@ -137,7 +135,7 @@ public class PartieGrilleControlleur {
 
     private void nouvellePartie() {
         try {
-            AnchorPane pane = FXMLLoader.load(getClass().getResource("../vue/partieGrille.fxml"));
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("../vue/partieGrille.fxml"), Services.getBundle());
             mainPane.getChildren().setAll(pane);
         } catch (IOException e1) {
             e1.printStackTrace();
