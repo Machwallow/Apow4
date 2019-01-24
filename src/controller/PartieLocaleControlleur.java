@@ -3,7 +3,9 @@ package controller;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import vue.Main;
 
@@ -15,11 +17,13 @@ public class PartieLocaleControlleur {
     public Button buttonLoad;
     public Button buttonBack;
     public AnchorPane mainPane;
+    public Label title;
 
     @FXML
     private void initialize() {
         setupButtonSplit();
         setupButtonBack();
+        title.setFont(new Font("Trebuchet MS Italic", 36.0));
     }
 
     private void setupButtonSplit(){
@@ -46,6 +50,7 @@ public class PartieLocaleControlleur {
             //TODO Chargement des parties
         });
     }
+
     private void setupButtonBack(){
         buttonBack.setOnMouseClicked(event -> {
             try {

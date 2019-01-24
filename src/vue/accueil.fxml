@@ -26,12 +26,9 @@
             <RowConstraints prefHeight="30.0" />
          </rowConstraints>
          <children>
-             <Label text="Apow⁴" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-               <font>
-                  <Font name="Trebuchet MS Italic" size="36.0" />
-               </font></Label>
+             <Label fx:id="title" text="Apow⁴" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER"/>
              <Button fx:id="buttonLocal" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="%local" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-             <Button fx:id="buttonOnline" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="%online" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+             <Button fx:id="buttonLanguage" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="%language" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
              <Button fx:id="buttonRules" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="%rules" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
              <Button fx:id="buttonQuit" mnemonicParsing="false" prefHeight="25.0" prefWidth="202.0" text="%quit" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
          </children>

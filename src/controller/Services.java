@@ -22,6 +22,8 @@ public class Services {
 
     public static void changeLocale(Locale l){
         Locale.setDefault(l);
+        bundle = ResourceBundle.getBundle("bundles.bundle", Locale.getDefault());
+
     }
 
     public static ResourceBundle getBundle(){

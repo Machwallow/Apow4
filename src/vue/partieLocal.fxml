@@ -27,13 +27,7 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" />
         </rowConstraints>
          <children>
-            <Label text="Apow⁴" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-               <GridPane.margin>
-                  <Insets />
-               </GridPane.margin>
-               <font>
-                  <Font name="Trebuchet MS Italic" size="36.0" />
-               </font></Label>
+            <Label fx:id="title" text="Apow⁴" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER"/>
             <Button fx:id="buttonSplit" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="%split" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3"/>
             <Button fx:id="buttonIA" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="%ia" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4"/>
 
