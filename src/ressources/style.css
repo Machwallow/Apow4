@@ -1,3 +1,7 @@
 .root{
     -fx-font-family: "Trebuchet MS";
 }
+
+#my-table .table-column{
+    -fx-alignment: CENTER;
+}

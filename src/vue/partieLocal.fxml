@@ -31,7 +31,7 @@
             <Button fx:id="buttonSplit" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="%split" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3"/>
             <Button fx:id="buttonIA" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="%ia" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4"/>
 
-            <Button fx:id="buttonLoad" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="%load" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5"/>
+            <Button fx:id="buttonPlayers" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="%players" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5"/>
             <Button fx:id="buttonBack" mnemonicParsing="false" prefHeight="23.0" prefWidth="201.0" text="%back" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6"/>
          </children>
       </GridPane>

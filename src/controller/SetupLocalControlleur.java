@@ -10,9 +10,11 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
-import java.io.File;
-import java.io.IOException;
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.*;
 import java.net.MalformedURLException;
+import java.util.ArrayList;
 
 public class SetupLocalControlleur {
 
@@ -62,6 +64,22 @@ public class SetupLocalControlleur {
                 PartieGrilleControlleur.setAlignerGagnant(Integer.parseInt(textPower.getText()));
                 PartieGrilleControlleur.setNombreVictoire(Integer.parseInt(textMaxScore.getText()));
                 PartieGrilleControlleur.setJoueurs(joueurs[0], joueurs[1]);
+
+                //seri image
+                Services.saveImage(joueurs[0]);
+                Services.saveImage(joueurs[1]);
+                ArrayList<Joueur> a = new ArrayList<>();
+                a.add(joueurs[0]);
+                a.add(joueurs[1]);
+                ///serialization
+                Services.saveJoueurs(a);
+                a = Services.getAllJoueurs();
+
+                for(int i=0;i<a.size();i++){
+                    System.out.println(a.get(i));
+                }
+                //-----------------------
+
 
                 //Permet de changer la taille de la fenêtre et de la center au milieu de l'écran
                 Stage stage = (Stage)mainPane.getScene().getWindow();

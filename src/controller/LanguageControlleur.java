@@ -1,14 +1,13 @@
 package controller;
-        import javafx.fxml.FXML;
-        import javafx.fxml.FXMLLoader;
-        import javafx.scene.control.Button;
-        import javafx.scene.image.ImageView;
-        import javafx.scene.layout.AnchorPane;
-        import javafx.stage.Stage;
-        import vue.Main;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import vue.Main;
 
-        import java.io.IOException;
-        import java.util.Locale;
+import java.io.IOException;
+import java.util.Locale;
 
 public class LanguageControlleur {
 

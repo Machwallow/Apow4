@@ -26,6 +26,7 @@ public class AccueilControlleur {
         setupButtonLocal();
         setupButtonLanguage();
         setupButtonQuit();
+        setupButtonRules();
         title.setFont(new Font("Trebuchet MS Italic", 36.0));
     }
 
@@ -37,6 +38,12 @@ public class AccueilControlleur {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        });
+    }
+
+    private void setupButtonRules() {
+        buttonRules.setOnMouseClicked(event -> {
+            //TODO Boutton des règles
         });
     }
 

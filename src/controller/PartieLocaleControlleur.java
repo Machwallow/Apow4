@@ -11,10 +11,9 @@ import vue.Main;
 
 public class PartieLocaleControlleur {
 
-
     public Button buttonSplit;
     public Button buttonIA;
-    public Button buttonLoad;
+    public Button buttonPlayers;
     public Button buttonBack;
     public AnchorPane mainPane;
     public Label title;
@@ -23,6 +22,7 @@ public class PartieLocaleControlleur {
     private void initialize() {
         setupButtonSplit();
         setupButtonBack();
+        setupButtonPlayers();
         title.setFont(new Font("Trebuchet MS Italic", 36.0));
     }
 
@@ -45,9 +45,18 @@ public class PartieLocaleControlleur {
         });
     }
 
-    private void setupButtonLoad(){
-        buttonLoad.setOnMouseClicked(event -> {
-            //TODO Chargement des parties
+    private void setupButtonPlayers(){
+        buttonPlayers.setOnMouseClicked(event -> {
+            Stage stage = (Stage) mainPane.getScene().getWindow();
+            stage.setWidth(400);
+            stage.setHeight(500);
+            Services.centrerFenetre(stage);
+            try {
+                AnchorPane pane = FXMLLoader.load(getClass().getResource("../vue/joueurs.fxml"), Services.getBundle());
+                mainPane.getChildren().setAll(pane);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         });
     }
 
