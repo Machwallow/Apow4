@@ -31,7 +31,7 @@ public class AccueilControlleur {
     }
 
     private void setupButtonLocal(){
-        buttonLocal.setOnMouseClicked(event ->{
+        buttonLocal.setOnAction(event ->{
             try {
                 AnchorPane pane = FXMLLoader.load(getClass().getResource("../vue/partieLocal.fxml"), Services.getBundle());
                 mainPane.getChildren().setAll(pane);
@@ -42,13 +42,13 @@ public class AccueilControlleur {
     }
 
     private void setupButtonRules() {
-        buttonRules.setOnMouseClicked(event -> {
+        buttonRules.setOnAction(event -> {
             //TODO Boutton des règles
         });
     }
 
     private void setupButtonLanguage(){
-        buttonLanguage.setOnMouseClicked(event ->{
+        buttonLanguage.setOnAction(event ->{
             try {
                 AnchorPane pane = FXMLLoader.load(getClass().getResource("../vue/language.fxml"), Services.getBundle());
                 mainPane.getChildren().setAll(pane);
@@ -59,10 +59,7 @@ public class AccueilControlleur {
     }
 
     private void setupButtonQuit(){
-        buttonQuit.setOnMouseClicked(event -> {
-            Stage stage = (Stage) buttonQuit.getScene().getWindow();
-            stage.close();
-        });
+        Services.setCloseWindow(buttonQuit);
     }
 
 

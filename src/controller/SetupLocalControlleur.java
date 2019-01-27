@@ -46,7 +46,7 @@ public class SetupLocalControlleur {
             if (fichier != null) {
                 try {
                     iv.setImage(new Image(fichier.toURI().toURL().toExternalForm()));
-                    joueurs[numeroJoueur] = new Joueur(fichier.toURI().toURL().toExternalForm());
+                    joueurs[numeroJoueur] = new Joueur("nom"+numeroJoueur,fichier.toURI().toURL().toExternalForm());
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
                 }
@@ -66,8 +66,10 @@ public class SetupLocalControlleur {
                 PartieGrilleControlleur.setJoueurs(joueurs[0], joueurs[1]);
 
                 //seri image
-                Services.saveImage(joueurs[0]);
-                Services.saveImage(joueurs[1]);
+                joueurs[0].saveImage();
+                joueurs[1].saveImage();
+                System.out.println(joueurs[0]);
+                System.out.println(joueurs[1]);
                 ArrayList<Joueur> a = new ArrayList<>();
                 a.add(joueurs[0]);
                 a.add(joueurs[1]);
