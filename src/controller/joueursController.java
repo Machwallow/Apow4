@@ -45,32 +45,6 @@ public class joueursController {
             Stage stage = (Stage) mainPane.getScene().getWindow();
             Services.setupFenetre(Services.WIDTH_BASE+10, Services.HEIGHT_BASE+40, stage);
             for (Joueur j:joueurs) {
-                File i1 = new File(("src\\tmp\\"+j.getNom()+".png"));
-                System.out.println("file 1:"+i1);
-                System.out.println("file 1 exists:"+i1.exists());
-               /* if (i1.exists()){
-                    System.out.println("jimage = "+j.getImg());
-                    File i2 = null;
-                    try {
-                        i2 = Paths.get(new URI(j.getImg())).toFile();
-                    } catch (URISyntaxException e) {
-                        e.printStackTrace();
-                    }
-                    System.out.println("file2:"+i2);
-                    System.out.println("file 2 exists: "+ i2.exists());
-                    System.out.println("compare:"+Services.compareImage(i1, i2));
-                    if (!Services.compareImage(i1, i2)){
-                        j.saveImage();
-                        System.out.println(j.getNom());
-                        System.out.println(j.getImg());
-                    }
-                }else{
-                    System.out.println("spot1:  "+j.getImg());
-                    j.saveImage();
-                    System.out.println(j.getNom());
-                    System.out.println(j.getImg());
-                }/*/
-
             j.saveImage();
             Services.saveJoueurs(joueurs);
             for (String s : imagesToRemove) {

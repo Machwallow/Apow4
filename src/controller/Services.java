@@ -26,6 +26,8 @@ public class Services {
     public final static int WIDTH_SETUP = 800, HEIGHT_SETUP = 800;
     public final static int WIDTH_GAME = 1280, HEIGHT_GAME = 720;
     public final static int WIDTH_TOKEN = 55, HEIGHT_TOKEN = 36;
+    public final static int WIDTH_POP_UP = 300, HEIGHT_POP_UP = 150;
+
 
     public static void setupBundle(){
         bundle = ResourceBundle.getBundle("bundles.bundle", Locale.getDefault());
@@ -101,6 +103,7 @@ public class Services {
         stage.initModality(Modality.APPLICATION_MODAL);
     }
 
+    /*
     public static boolean compareImage(File fileA, File fileB) {
         try {
             // take buffer data from both image files //
@@ -129,4 +132,5 @@ public class Services {
             return  false;
         }
     }
+    */
 }
