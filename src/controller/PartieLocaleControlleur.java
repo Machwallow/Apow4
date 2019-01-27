@@ -48,9 +48,7 @@ public class PartieLocaleControlleur {
     private void setupButtonPlayers(){
         buttonPlayers.setOnMouseClicked(event -> {
             Stage stage = (Stage) mainPane.getScene().getWindow();
-            stage.setWidth(400);
-            stage.setHeight(500);
-            Services.centrerFenetre(stage);
+            Services.setupFenetre(Services.WIDTH_PLAYERS,Services.HEIGHT_PLAYERS,stage);
             try {
                 AnchorPane pane = FXMLLoader.load(getClass().getResource("../vue/joueurs.fxml"), Services.getBundle());
                 mainPane.getChildren().setAll(pane);

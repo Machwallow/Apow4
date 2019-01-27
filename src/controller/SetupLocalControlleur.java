@@ -3,18 +3,14 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
-import java.io.*;
-import java.net.MalformedURLException;
-import java.util.ArrayList;
+import java.io.IOException;
 
 public class SetupLocalControlleur {
 
@@ -24,34 +20,36 @@ public class SetupLocalControlleur {
     public CheckBox checkTriche;
     public TextField textLignes, textColonnes, textPower, textMaxScore;
     public AnchorPane mainPane;
+    public Label labelJ1, labelJ2;
 
     private static Joueur[] joueurs = new Joueur[2];
 
     @FXML
     private void initialize() {
-        setupButtonChooser(0, imageJ1, buttonChooserJ1);
-        setupButtonChooser(1, imageJ2, buttonChooserJ2);
+        setupButtonChooser(0, imageJ1, labelJ1, buttonChooserJ1);
+        setupButtonChooser(1, imageJ2, labelJ2, buttonChooserJ2);
         setupButtonLancer();
     }
 
-
-
-    private void setupButtonChooser(int numeroJoueur, ImageView iv, Button bouton){
-        bouton.setOnMouseClicked(event ->{
-            FileChooser fileChooser = new FileChooser();
-            fileChooser.setTitle("Choisir l'image du joueur "+numeroJoueur);
-            fileChooser.getExtensionFilters().add(
-                    new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif"));
-            File fichier = fileChooser.showOpenDialog(mainPane.getScene().getWindow());
-            if (fichier != null) {
-                try {
-                    iv.setImage(new Image(fichier.toURI().toURL().toExternalForm()));
-                    joueurs[numeroJoueur] = new Joueur("nom"+numeroJoueur,fichier.toURI().toURL().toExternalForm());
-                } catch (MalformedURLException e) {
-                    e.printStackTrace();
-                }
+    private void setupButtonChooser(int numeroJoueur, ImageView iv, Label label, Button bouton){
+        bouton.setOnAction(event -> {
+            Stage stage = new Stage();
+            joueursPickerController.setPlayerToPick(numeroJoueur);
+            try {
+                AnchorPane root = FXMLLoader.load(getClass().getResource("../vue/joueursPicker.fxml"), Services.getBundle());
+                Services.setupNewWindow(stage, root, Services.WIDTH_PLAYERS, Services.HEIGHT_PLAYERS, Services.getBundle().getString("pickAPlayer"));
+                stage.getScene().getStylesheets().add(getClass().getResource("../ressources/style.css").toExternalForm());
+                stage.showAndWait();
+                iv.setImage(new Image(joueurs[numeroJoueur].getImg()));
+                label.setText(joueurs[numeroJoueur].getNom());
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         });
+    }
+
+    public static void setPlayer(int index, Joueur joueur){
+        joueurs[index] = joueur;
     }
 
     private void setupButtonLancer(){
@@ -65,31 +63,9 @@ public class SetupLocalControlleur {
                 PartieGrilleControlleur.setNombreVictoire(Integer.parseInt(textMaxScore.getText()));
                 PartieGrilleControlleur.setJoueurs(joueurs[0], joueurs[1]);
 
-            //TODO changement du setup pour les joueurs
-
-                //seri image
-                joueurs[0].saveImage();
-                joueurs[1].saveImage();
-                System.out.println(joueurs[0]);
-                System.out.println(joueurs[1]);
-                ArrayList<Joueur> a = new ArrayList<>();
-                a.add(joueurs[0]);
-                a.add(joueurs[1]);
-                ///serialization
-                Services.saveJoueurs(a);
-                a = Services.getAllJoueurs();
-
-                for(int i=0;i<a.size();i++){
-                    System.out.println(a.get(i));
-                }
-                //-----------------------
-
-
                 //Permet de changer la taille de la fenêtre et de la center au milieu de l'écran
                 Stage stage = (Stage)mainPane.getScene().getWindow();
-                stage.setWidth(Services.WIDTH_GAME);
-                stage.setHeight(Services.HEIGHT_GAME);
-                Services.centrerFenetre(stage);
+                Services.setupFenetre(Services.WIDTH_GAME, Services.HEIGHT_GAME, stage);
 
                 AnchorPane pane = FXMLLoader.load(getClass().getResource("../vue/partieGrille.fxml"), Services.getBundle());
                 mainPane.getChildren().setAll(pane);

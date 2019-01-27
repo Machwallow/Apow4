@@ -1,5 +1,6 @@
 package controller;
 
+import javafx.collections.ListChangeListener;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
@@ -12,6 +13,7 @@ import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import javax.imageio.ImageIO;
+import javax.swing.text.TableView;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBuffer;
 import java.io.*;
@@ -28,6 +30,8 @@ public class Services {
     public final static int WIDTH_GAME = 1280, HEIGHT_GAME = 720;
     public final static int WIDTH_TOKEN = 55, HEIGHT_TOKEN = 36;
     public final static int WIDTH_POP_UP = 300, HEIGHT_POP_UP = 150;
+    public final static int WIDTH_PLAYERS = 400, HEIGHT_PLAYERS = 500;
+
 
 
     public static void setupBundle(){
@@ -114,6 +118,7 @@ public class Services {
             }
         });
     }
+
 
     /*
     public static boolean compareImage(File fileA, File fileB) {
