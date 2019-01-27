@@ -61,14 +61,7 @@ public class PartieLocaleControlleur {
     }
 
     private void setupButtonBack(){
-        buttonBack.setOnMouseClicked(event -> {
-            try {
-                AnchorPane pane = FXMLLoader.load(getClass().getResource("../vue/accueil.fxml"), Services.getBundle());
-                mainPane.getChildren().setAll(pane);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        });
+        Services.setBackToAccueil(buttonBack, mainPane);
     }
 
 

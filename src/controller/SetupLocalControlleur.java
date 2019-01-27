@@ -65,6 +65,8 @@ public class SetupLocalControlleur {
                 PartieGrilleControlleur.setNombreVictoire(Integer.parseInt(textMaxScore.getText()));
                 PartieGrilleControlleur.setJoueurs(joueurs[0], joueurs[1]);
 
+            //TODO changement du setup pour les joueurs
+
                 //seri image
                 joueurs[0].saveImage();
                 joueurs[1].saveImage();

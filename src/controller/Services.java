@@ -1,5 +1,6 @@
 package controller;
 
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -101,6 +102,17 @@ public class Services {
         stage.getIcons().add(new Image("ressources/logo.png"));
         stage.setResizable(false);
         stage.initModality(Modality.APPLICATION_MODAL);
+    }
+
+    public static void setBackToAccueil(Button button, AnchorPane mainPane){
+        button.setOnMouseClicked(event -> {
+            try {
+                AnchorPane pane = FXMLLoader.load(Services.class.getResource("../vue/accueil.fxml"), Services.getBundle());
+                mainPane.getChildren().setAll(pane);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        });
     }
 
     /*

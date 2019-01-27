@@ -43,7 +43,12 @@ public class AccueilControlleur {
 
     private void setupButtonRules() {
         buttonRules.setOnAction(event -> {
-            //TODO Boutton des règles
+            try {
+                AnchorPane pane = FXMLLoader.load(getClass().getResource("../vue/rules.fxml"), Services.getBundle());
+                mainPane.getChildren().setAll(pane);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         });
     }
 

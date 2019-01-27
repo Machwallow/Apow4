@@ -53,13 +53,5 @@ public class LanguageControlleur {
     }
 
     private void setupButtonBack() {
-        buttonBack.setOnMouseClicked(event -> {
-            try {
-                AnchorPane pane = FXMLLoader.load(getClass().getResource("../vue/accueil.fxml"), Services.getBundle());
-                mainPane.getChildren().setAll(pane);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-    }
+        Services.setBackToAccueil(buttonBack, mainPane);    }
 }
