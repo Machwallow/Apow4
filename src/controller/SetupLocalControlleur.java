@@ -54,23 +54,26 @@ public class SetupLocalControlleur {
 
     private void setupButtonLancer(){
         buttonLancer.setOnMouseClicked(event ->{
-            try {
-                System.out.println(mainPane.getScene());
-                //Définir nbLignes,nbColonnes, alignerGagnat, nbVictoire et les joueurs avant de changer la fenêtre
-                PartieGrilleControlleur.setNbLignes(Integer.parseInt(textLignes.getText()));
-                PartieGrilleControlleur.setNbColonnes(Integer.parseInt(textColonnes.getText()));
-                PartieGrilleControlleur.setAlignerGagnant(Integer.parseInt(textPower.getText()));
-                PartieGrilleControlleur.setNombreVictoire(Integer.parseInt(textMaxScore.getText()));
-                PartieGrilleControlleur.setJoueurs(joueurs[0], joueurs[1]);
+            if (!joueurs[0].getNom().equals(joueurs[1].getNom())) {
+                try {
+                    System.out.println(mainPane.getScene());
+                    //Définir nbLignes,nbColonnes, alignerGagnat, nbVictoire et les joueurs avant de changer la fenêtre
+                    PartieGrilleControlleur.setNbLignes(Integer.parseInt(textLignes.getText()));
+                    PartieGrilleControlleur.setNbColonnes(Integer.parseInt(textColonnes.getText()));
+                    PartieGrilleControlleur.setAlignerGagnant(Integer.parseInt(textPower.getText()));
+                    PartieGrilleControlleur.setNombreVictoire(Integer.parseInt(textMaxScore.getText()));
+                    PartieGrilleControlleur.setJoueurs(joueurs[0], joueurs[1]);
+                    PartieGrilleControlleur.setCheating(checkTriche.isSelected());
 
-                //Permet de changer la taille de la fenêtre et de la center au milieu de l'écran
-                Stage stage = (Stage)mainPane.getScene().getWindow();
-                Services.setupFenetre(Services.WIDTH_GAME, Services.HEIGHT_GAME, stage);
+                    //Permet de changer la taille de la fenêtre et de la center au milieu de l'écran
+                    Stage stage = (Stage) mainPane.getScene().getWindow();
+                    Services.setupFenetre(Services.WIDTH_GAME, Services.HEIGHT_GAME, stage);
 
-                AnchorPane pane = FXMLLoader.load(getClass().getResource("../vue/partieGrille.fxml"), Services.getBundle());
-                mainPane.getChildren().setAll(pane);
-            } catch (IOException e) {
-                e.printStackTrace();
+                    AnchorPane pane = FXMLLoader.load(getClass().getResource("../vue/partieGrille.fxml"), Services.getBundle());
+                    mainPane.getChildren().setAll(pane);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         });
     }

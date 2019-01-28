@@ -121,9 +121,9 @@ public class Partie {
         return 0;
     }
 
-    public void annuler(){
+    public int annuler(){
         if(listeCoup.size()==0)
-            return;
+            return -1;
         int i =nombreLigne-1;
         //System.out.println(i+"  "+listeCoup.get(listeCoup.size()-1));
         while(Matrice[i][listeCoup.get(listeCoup.size()-1)]==0){
@@ -131,10 +131,12 @@ public class Partie {
         }
         //System.out.println(i+"  "+listeCoup.get(listeCoup.size()-1)+"  "+Matrice[i][listeCoup.get(listeCoup.size()-1)]);
        // System.out.println(this);
-        Matrice[i][listeCoup.get(listeCoup.size()-1)]=0;
+        int colonne = listeCoup.get(listeCoup.size()-1);
+        Matrice[i][colonne]=0;
         listeCoup.remove(listeCoup.size()-1);
-
+        return colonne;
     }
+
     public String toString(){
         int x=0,y=0;
         String ligne="";

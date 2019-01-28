@@ -113,13 +113,6 @@ public class joueursController {
         });
         imageColumn.setCellValueFactory(param -> {
             Joueur joueur = param.getValue();
-            System.out.println("fill  "+joueur.getImg());
-            /*try {
-                return new SimpleObjectProperty<>(new ImageView(new Image(new FileInputStream(joueur.getImg()), Services.WIDTH_TOKEN, Services.HEIGHT_TOKEN, true, true)));
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-
-            }*/
             return new SimpleObjectProperty<>(new ImageView(new Image(joueur.getImg(), Services.WIDTH_TOKEN, Services.HEIGHT_TOKEN, true, true)));
 
         });

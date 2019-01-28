@@ -41,7 +41,10 @@
                            <font>
                               <Font size="24.0" />
                            </font></Label>
-                        <Label text="%setup2" GridPane.columnIndex="1" />
+                        <Label text="%setup2" GridPane.columnIndex="1">
+                           <font>
+                              <Font size="24.0" />
+                           </font></Label>
                      </children>
                   </GridPane>
                </children></AnchorPane>

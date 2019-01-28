@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Ajout de l'interface de grille, ajout de différentes classes d'utilitaire">
-      <change afterPath="$PROJECT_DIR$/src/controller/WinnerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/vue/winner.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Messages de fin de partie">
+      <change afterPath="$PROJECT_DIR$/src/controller/PopUpConfirmController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/vue/popUpConfirm.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/bundles/bundle_en.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/bundles/bundle_en.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/bundles/bundle_fr.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/bundles/bundle_fr.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/Joueur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/Joueur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/Partie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/Partie.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/PartieGrilleControlleur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/PartieGrilleControlleur.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/Services.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/Services.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/SetupLocalControlleur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/SetupLocalControlleur.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/joueursController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/joueursController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vue/partieGrille.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/vue/partieGrille.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/vue/setupLocal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/vue/setupLocal.fxml" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
@@ -83,15 +86,14 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controller/joueursController.java">
+        <entry file="file://$PROJECT_DIR$/src/controller/SetupLocalControlleur.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-14">
-              <caret line="49" column="45" lean-forward="true" selection-start-line="49" selection-start-column="45" selection-end-line="49" selection-end-column="45" />
+            <state relative-caret-position="120">
+              <caret line="56" column="17" selection-start-line="56" selection-start-column="17" selection-end-line="56" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="class#1454:1906" />
-                <element signature="e#1949#2077#0" />
-                <element signature="e#2210#2301#0" />
+                <element signature="e#1975#1976#0" expanded="true" />
+                <element signature="e#2003#2004#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -101,23 +103,8 @@
         <entry file="file://$PROJECT_DIR$/src/vue/setupLocal.fxml">
           <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
           <provider editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="43" column="202" selection-start-line="43" selection-start-column="202" selection-end-line="43" selection-end-column="202" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controller/EditJoueurController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="59" selection-start-line="59" selection-end-line="59" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2793#2794#0" expanded="true" />
-                <element signature="e#2873#2874#0" expanded="true" />
-                <element signature="e#2910#2911#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="347">
+              <caret line="38" column="42" selection-start-line="38" selection-start-column="42" selection-end-line="38" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -125,30 +112,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controller/Services.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="39" column="5" lean-forward="true" selection-start-line="38" selection-end-line="39" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/bundles/bundle_fr.properties">
-          <provider editor-type-id="ResourceBundle" />
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="492">
-              <caret line="48" column="40" selection-start-line="48" selection-start-column="40" selection-end-line="48" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controller/PartieLocaleControlleur.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="71">
-              <caret line="51" column="33" selection-start-line="51" selection-start-column="33" selection-end-line="51" selection-end-column="33" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="163">
+              <caret line="94" column="14" lean-forward="true" selection-start-line="94" selection-start-column="14" selection-end-line="101" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -156,25 +121,67 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controller/PartieGrilleControlleur.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="873">
-              <caret line="183" column="95" lean-forward="true" selection-start-line="183" selection-start-column="95" selection-end-line="183" selection-end-column="95" />
+            <state relative-caret-position="491">
+              <caret line="231" column="29" selection-start-line="231" selection-start-column="23" selection-end-line="231" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#5553#5554#0" expanded="true" />
-                <element signature="e#5632#5633#0" expanded="true" />
-                <element signature="e#5719#5720#0" expanded="true" />
-                <element signature="e#5806#5807#0" expanded="true" />
+                <element signature="method#genererGrille#0;class#PartieGrilleControlleur#0" />
+                <element signature="method#addPane#0;class#PartieGrilleControlleur#0" />
+                <element signature="method#nouvellePartie#0;class#PartieGrilleControlleur#0" />
+                <element signature="method#setupRollback#0;class#PartieGrilleControlleur#0" />
+                <element signature="e#7625#7626#0" expanded="true" />
+                <element signature="e#7703#7704#0" expanded="true" />
+                <element signature="e#7789#7790#0" expanded="true" />
+                <element signature="e#7875#7876#0" expanded="true" />
+                <element signature="method#setJoueurs#0;class#PartieGrilleControlleur#0" />
+                <element signature="e#8103#8104#0" expanded="true" />
+                <element signature="e#9083#9084#0" expanded="true" />
+                <element signature="e#9123#9124#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/vue/partieGrille.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-9">
+              <caret line="15" column="14" lean-forward="true" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/vue/winner.fxml">
           <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
           <provider editor-type-id="text-editor">
-            <state relative-caret-position="408">
+            <state relative-caret-position="441">
               <caret line="28" column="29" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/vue/popUpConfirm.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="33" column="31" lean-forward="true" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/controller/PopUpConfirmController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="287">
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#471#472#0" expanded="true" />
+                <element signature="e#521#522#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -182,14 +189,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controller/WinnerController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="41" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
+            <state>
+              <caret selection-end-line="26" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#464#465#0" expanded="true" />
-                <element signature="e#487#488#0" expanded="true" />
-                <element signature="e#499#500#0" expanded="true" />
-                <element signature="e#547#548#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -241,17 +244,14 @@
         <option value="$PROJECT_DIR$/src/Controller/accueilControlleur.java" />
         <option value="$PROJECT_DIR$/src/Controller/Partie.java" />
         <option value="$PROJECT_DIR$/src/controller/Jeu.java" />
-        <option value="$PROJECT_DIR$/src/controller/Partie.java" />
         <option value="$PROJECT_DIR$/src/Vue/Main.java" />
         <option value="$PROJECT_DIR$/src/controller/IA.java" />
         <option value="$PROJECT_DIR$/src/vue/partieGrille2.fxml" />
-        <option value="$PROJECT_DIR$/src/vue/partieGrille.fxml" />
         <option value="$PROJECT_DIR$/src/vue/partieLocal2.fxml" />
         <option value="$PROJECT_DIR$/src/controller/TestContr.java" />
         <option value="$PROJECT_DIR$/src/bundles/bundle.properties" />
         <option value="$PROJECT_DIR$/src/vue/language.fxml" />
         <option value="$PROJECT_DIR$/src/vue/accueil.fxml" />
-        <option value="$PROJECT_DIR$/src/controller/LanguageControlleur.java" />
         <option value="$PROJECT_DIR$/src/controller/CustomImage.java" />
         <option value="$PROJECT_DIR$/src/ressources/style.css" />
         <option value="$PROJECT_DIR$/src/vue/partieLocal.fxml" />
@@ -259,23 +259,32 @@
         <option value="$PROJECT_DIR$/src/controller/ActionButtonTableCell.java" />
         <option value="$PROJECT_DIR$/src/vue/editJoueur.fxml" />
         <option value="$PROJECT_DIR$/src/vue/createJoueur.fxml" />
-        <option value="$PROJECT_DIR$/src/controller/AccueilControlleur.java" />
         <option value="$PROJECT_DIR$/src/vue/Main.java" />
-        <option value="$PROJECT_DIR$/src/controller/PartieLocaleControlleur.java" />
         <option value="$PROJECT_DIR$/src/vue/joueurs.fxml" />
-        <option value="$PROJECT_DIR$/src/controller/SetupLocalControlleur.java" />
         <option value="$PROJECT_DIR$/src/controller/compareImage.java" />
         <option value="$PROJECT_DIR$/src/controller/EditJoueurController.java" />
         <option value="$PROJECT_DIR$/src/controller/CreateJoueurController.java" />
-        <option value="$PROJECT_DIR$/src/controller/Joueur.java" />
+        <option value="$PROJECT_DIR$/src/controller/WinnerController.java" />
+        <option value="$PROJECT_DIR$/src/vue/winner.fxml" />
+        <option value="$PROJECT_DIR$/src/controller/AccueilControlleur.java" />
+        <option value="$PROJECT_DIR$/src/vue/rules.fxml" />
+        <option value="$PROJECT_DIR$/src/controller/RulesController.java" />
+        <option value="$PROJECT_DIR$/src/controller/LanguageControlleur.java" />
+        <option value="$PROJECT_DIR$/src/vue/joueursPicker.fxml" />
+        <option value="$PROJECT_DIR$/src/controller/PartieLocaleControlleur.java" />
+        <option value="$PROJECT_DIR$/src/controller/joueursPickerController.java" />
         <option value="$PROJECT_DIR$/src/controller/joueursController.java" />
+        <option value="$PROJECT_DIR$/src/controller/Services.java" />
+        <option value="$PROJECT_DIR$/src/controller/Partie.java" />
+        <option value="$PROJECT_DIR$/src/controller/Joueur.java" />
+        <option value="$PROJECT_DIR$/src/controller/SetupLocalControlleur.java" />
         <option value="$PROJECT_DIR$/src/vue/setupLocal.fxml" />
         <option value="$PROJECT_DIR$/src/bundles/bundle_en.properties" />
         <option value="$PROJECT_DIR$/src/bundles/bundle_fr.properties" />
-        <option value="$PROJECT_DIR$/src/controller/Services.java" />
+        <option value="$PROJECT_DIR$/src/vue/popUpConfirm.fxml" />
+        <option value="$PROJECT_DIR$/src/vue/partieGrille.fxml" />
         <option value="$PROJECT_DIR$/src/controller/PartieGrilleControlleur.java" />
-        <option value="$PROJECT_DIR$/src/controller/WinnerController.java" />
-        <option value="$PROJECT_DIR$/src/vue/winner.fxml" />
+        <option value="$PROJECT_DIR$/src/controller/PopUpConfirmController.java" />
       </list>
     </option>
   </component>
@@ -313,6 +322,13 @@
               <item name="Apow4" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="bundles" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Apow4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Apow4" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="bundles" type="462c0819:PsiDirectoryNode" />
+              <item name="Resource Bundle 'bundle'" type="a6c14932:ResourceBundleNode" />
             </path>
             <path>
               <item name="Apow4" type="b2602c69:ProjectViewProjectNode" />
@@ -356,7 +372,7 @@
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548561631565" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548643027494" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="C:/Program Files/Git/cmd/git.exe" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -364,15 +380,15 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\IntelliJ IDEA 2018.3.3\Apow4\src" />
-    </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="controller" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\IntelliJ IDEA 2018.3.3\Apow4\src\vue" />
       <recent name="C:\Users\Lucas\IdeaProjects\Apow4\src\Vue" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\IntelliJ IDEA 2018.3.3\Apow4\src" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -474,7 +490,8 @@
       <workItem from="1546623706097" duration="26069000" />
       <workItem from="1548129902618" duration="16641000" />
       <workItem from="1548262814323" duration="19545000" />
-      <workItem from="1548348612545" duration="63634000" />
+      <workItem from="1548348612545" duration="69570000" />
+      <workItem from="1548598851090" duration="22277000" />
     </task>
     <task id="LOCAL-00001" summary="creation dossier mvc">
       <created>1545144979208</created>
@@ -616,11 +633,32 @@
       <option name="project" value="LOCAL" />
       <updated>1548558827936</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Messages de fin de partie">
+      <created>1548561701812</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1548561701812</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Ajout des règles">
+      <created>1548564222032</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1548564222032</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Choix du joueur au début de la partie">
+      <created>1548602598011</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1548602598012</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="156971000" />
+    <option name="totallyTimeSpent" value="185184000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -635,7 +673,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.15298508" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.15458423" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -644,12 +682,12 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Duplicate detector" order="0" weight="0.32936078" />
       <window_info anchor="bottom" id="Message" order="1" />
-      <window_info anchor="bottom" id="Find" order="2" weight="0.23185265" />
-      <window_info anchor="bottom" id="Run" order="3" visible="true" weight="0.2654388" />
+      <window_info active="true" anchor="bottom" id="Find" order="2" visible="true" weight="0.23185265" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.2654388" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.39869988" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="7" weight="0.33261105" />
+      <window_info anchor="bottom" id="TODO" order="7" weight="0.2535211" />
       <window_info anchor="bottom" id="Application Servers" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32936078" />
       <window_info anchor="bottom" id="Problems" order="10" />
@@ -743,44 +781,18 @@
     <MESSAGE value="Woopsy oublié les images" />
     <MESSAGE value="Modifications interface, ajout de l'interface de gestion des joueurs (WIP)" />
     <MESSAGE value="AAAAAAAAAAH FINI LES JOUEURS PLUS JAMAIS J'FAIS CA&#10;(joueurs, gestion des joueurs, modification des images et des noms, stockage des joueurs et de leurs image via la serialization, interfaces en relation avec les joueurs etc etc" />
-    <option name="LAST_COMMIT_MESSAGE" value="AAAAAAAAAAH FINI LES JOUEURS PLUS JAMAIS J'FAIS CA&#10;(joueurs, gestion des joueurs, modification des images et des noms, stockage des joueurs et de leurs image via la serialization, interfaces en relation avec les joueurs etc etc" />
+    <MESSAGE value="Messages de fin de partie" />
+    <MESSAGE value="Ajout des règles" />
+    <MESSAGE value="Choix du joueur au début de la partie" />
+    <option name="LAST_COMMIT_MESSAGE" value="Choix du joueur au début de la partie" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/sample/Controller.java" />
-    <entry file="file://$PROJECT_DIR$/src/sample/sample.fxml" />
-    <entry file="file://$PROJECT_DIR$/src/sample/Main.java" />
-    <entry file="jar://D:/Java/jdk1.8.0_201/javafx-src.zip!/com/sun/javafx/event/CompositeEventHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="85" selection-start-line="85" selection-end-line="85" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/vue/partieGrille2.fxml" />
     <entry file="file://$PROJECT_DIR$/src/controller/TestContr.java" />
-    <entry file="file://$PROJECT_DIR$/src/controller/Partie.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
-          <folding>
-            <element signature="e#234#235#0" expanded="true" />
-            <element signature="e#264#265#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vue/partieGrille.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="53" column="27" lean-forward="true" selection-start-line="53" selection-start-column="27" selection-end-line="53" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/vue/accueil.fxml">
       <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
       <provider editor-type-id="text-editor">
@@ -803,16 +815,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/LanguageControlleur.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="18" column="17" selection-start-line="18" selection-end-line="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ressources/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -827,22 +829,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/CustomImage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#151#152#0" expanded="true" />
-            <element signature="e#182#183#0" expanded="true" />
-            <element signature="e#228#229#0" expanded="true" />
-            <element signature="e#262#263#0" expanded="true" />
-            <element signature="e#218#219#0" expanded="true" />
-            <element signature="e#246#247#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/CustomImage.java" />
     <entry file="jar://D:/Java/jdk1.8.0_201/javafx-src.zip!/javafx/scene/image/ImageView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -888,18 +875,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/Jeu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="57" column="13" selection-start-line="57" selection-start-column="13" selection-end-line="57" selection-end-column="13" />
-          <folding>
-            <element signature="method#nouvellePartie#0;class#Jeu#0" />
-            <element signature="e#1320#1321#0" expanded="true" />
-            <element signature="e#1350#1351#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/vue/createJoueur.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
@@ -918,16 +893,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/compareImage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="9" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tmp/daminor.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/compareImage.java" />
+    <entry file="file://$PROJECT_DIR$/src/tmp/daminor.png" />
     <entry file="jar://D:/Java/jdk1.8.0_201/src.zip!/javax/imageio/ImageIO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -935,28 +902,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tmp/fghjfghfghfghf.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tmp/test0.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tmp/fghjfghfghfghf.png" />
+    <entry file="file://$PROJECT_DIR$/src/tmp/test0.png" />
     <entry file="file://$PROJECT_DIR$/src/vue/joueurs.fxml">
       <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
       <provider editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/AccueilControlleur.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="61" column="44" selection-start-line="61" selection-start-column="44" selection-end-line="61" selection-end-column="44" />
-          <folding>
-            <element signature="e#1683#1684#0" expanded="true" />
-            <element signature="e#1734#1735#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -970,19 +922,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tmp/test3.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/SetupLocalControlleur.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="70" column="30" selection-start-line="70" selection-start-column="30" selection-end-line="70" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tmp/test3.png" />
     <entry file="file://$PROJECT_DIR$/src/tmp/test.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -1002,58 +942,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/Joueur.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="58" column="49" selection-start-line="58" selection-start-column="49" selection-end-line="58" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#Joueur#1;class#Joueur#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bundles/bundle_en.properties">
-      <provider editor-type-id="ResourceBundle" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="43" selection-start-line="43" selection-end-line="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/PartieLocaleControlleur.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="51" column="33" selection-start-line="51" selection-start-column="33" selection-end-line="51" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vue/setupLocal.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="43" column="202" selection-start-line="43" selection-start-column="202" selection-end-line="43" selection-end-column="202" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bundles/bundle_fr.properties">
-      <provider editor-type-id="ResourceBundle" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="48" column="40" selection-start-line="48" selection-start-column="40" selection-end-line="48" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/Services.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="39" column="5" lean-forward="true" selection-start-line="38" selection-end-line="39" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/EditJoueurController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
@@ -1067,43 +955,174 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/LanguageControlleur.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#setupButtonBack#0;class#LanguageControlleur#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/AccueilControlleur.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="46" column="89" selection-start-line="46" selection-start-column="89" selection-end-line="46" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/RulesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="16" column="24" selection-start-line="16" selection-end-line="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vue/rules.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/PartieLocaleControlleur.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="61" column="28" lean-forward="true" selection-start-line="61" selection-start-column="28" selection-end-line="61" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1927#1928#0" expanded="true" />
+            <element signature="e#1990#1991#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Java/jdk1.8.0_201/javafx-src.zip!/com/sun/javafx/collections/ListListenerHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="163" selection-start-line="163" selection-end-line="163" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/controller">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>controller</OriginalElement>
+          <nodes>
+            <node x="" y="">controller.IA</node>
+            <node x="" y="">controller.ActionButtonTableCell</node>
+            <node x="" y="">controller.RulesController</node>
+            <node x="" y="">controller.Partie</node>
+            <node x="" y="">controller.CreateJoueurController</node>
+            <node x="" y="">controller.WinnerController</node>
+            <node x="" y="">controller.AccueilControlleur</node>
+            <node x="" y="">controller.Jeu</node>
+            <node x="" y="">controller.PartieGrilleControlleur</node>
+            <node x="" y="">controller.Services</node>
+            <node x="" y="">controller.Joueur</node>
+            <node x="" y="">controller.LanguageControlleur</node>
+            <node x="" y="">controller.joueursController</node>
+            <node x="" y="">controller.PartieLocaleControlleur</node>
+            <node x="" y="">controller.joueursPickerController</node>
+            <node x="" y="">controller.SetupLocalControlleur</node>
+            <node x="" y="">controller.EditJoueurController</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.8" x="778.0833333333337" y="223.875" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vue/joueursPicker.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="59" column="141" selection-start-line="59" selection-start-column="141" selection-end-line="59" selection-end-column="141" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/joueursController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-14">
-          <caret line="49" column="45" lean-forward="true" selection-start-line="49" selection-start-column="45" selection-end-line="49" selection-end-column="45" />
+        <state relative-caret-position="306">
+          <caret line="111" column="61" lean-forward="true" selection-start-line="111" selection-start-column="61" selection-end-line="111" selection-end-column="61" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#1454:1906" />
-            <element signature="e#1949#2077#0" />
-            <element signature="e#2210#2301#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/PartieGrilleControlleur.java">
+    <entry file="file://$PROJECT_DIR$/src/controller/Jeu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="873">
-          <caret line="183" column="95" lean-forward="true" selection-start-line="183" selection-start-column="95" selection-end-line="183" selection-end-column="95" />
+        <state relative-caret-position="663">
+          <caret line="57" column="13" selection-start-line="57" selection-start-column="13" selection-end-line="57" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#5553#5554#0" expanded="true" />
-            <element signature="e#5632#5633#0" expanded="true" />
-            <element signature="e#5719#5720#0" expanded="true" />
-            <element signature="e#5806#5807#0" expanded="true" />
+            <element signature="method#nouvellePartie#0;class#Jeu#0" />
+            <element signature="e#1320#1321#0" expanded="true" />
+            <element signature="e#1350#1351#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/WinnerController.java">
+    <entry file="file://$PROJECT_DIR$/src/controller/Partie.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="41" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
+        <state relative-caret-position="-425">
+          <caret line="34" column="37" lean-forward="true" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
+          <folding>
+            <element signature="method#Partie#0;class#Partie#0" />
+            <element signature="method#toString#0;class#Partie#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/Joueur.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="50" column="4" selection-start-line="50" selection-start-column="4" selection-end-line="50" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#464#465#0" expanded="true" />
-            <element signature="e#487#488#0" expanded="true" />
-            <element signature="e#499#500#0" expanded="true" />
-            <element signature="e#547#548#0" expanded="true" />
+            <element signature="method#Joueur#1;class#Joueur#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/joueursPickerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="class#1338:1777" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vue/setupLocal.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="38" column="42" selection-start-line="38" selection-start-column="42" selection-end-line="38" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/SetupLocalControlleur.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="56" column="17" selection-start-line="56" selection-start-column="17" selection-end-line="56" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1975#1976#0" expanded="true" />
+            <element signature="e#2003#2004#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1111,8 +1130,91 @@
     <entry file="file://$PROJECT_DIR$/src/vue/winner.fxml">
       <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
       <provider editor-type-id="text-editor">
-        <state relative-caret-position="408">
+        <state relative-caret-position="441">
           <caret line="28" column="29" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bundles/bundle_fr.properties">
+      <provider editor-type-id="ResourceBundle" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1">
+          <caret line="24" column="9" lean-forward="true" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vue/partieGrille.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-9">
+          <caret line="15" column="14" lean-forward="true" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/Services.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="94" column="14" lean-forward="true" selection-start-line="94" selection-start-column="14" selection-end-line="101" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bundles/bundle_en.properties">
+      <provider editor-type-id="ResourceBundle" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="560">
+          <caret line="57" column="26" selection-start-line="57" selection-start-column="26" selection-end-line="57" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vue/popUpConfirm.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="33" column="31" lean-forward="true" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/WinnerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/PartieGrilleControlleur.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="491">
+          <caret line="231" column="29" selection-start-line="231" selection-start-column="23" selection-end-line="231" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#genererGrille#0;class#PartieGrilleControlleur#0" />
+            <element signature="method#addPane#0;class#PartieGrilleControlleur#0" />
+            <element signature="method#nouvellePartie#0;class#PartieGrilleControlleur#0" />
+            <element signature="method#setupRollback#0;class#PartieGrilleControlleur#0" />
+            <element signature="e#7625#7626#0" expanded="true" />
+            <element signature="e#7703#7704#0" expanded="true" />
+            <element signature="e#7789#7790#0" expanded="true" />
+            <element signature="e#7875#7876#0" expanded="true" />
+            <element signature="method#setJoueurs#0;class#PartieGrilleControlleur#0" />
+            <element signature="e#8103#8104#0" expanded="true" />
+            <element signature="e#9083#9084#0" expanded="true" />
+            <element signature="e#9123#9124#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/PopUpConfirmController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#471#472#0" expanded="true" />
+            <element signature="e#521#522#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

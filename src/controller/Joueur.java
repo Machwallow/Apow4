@@ -46,9 +46,9 @@ public class Joueur implements Serializable {
         oos.writeUTF(img);
     }
 
-    public String toString(){
-        return nom + ":  " + img;
-    }
+  //  public String toString(){
+//        return nom + ":  " + img;
+  //  }
 
     public void saveImage(){
         try {
