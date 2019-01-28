@@ -96,7 +96,7 @@ public class Partie {
             i=-x;
         //System.out.println(" lalal ");
         while (i+(nombreColone-y)<nombreColone && i+x<nombreLigne && nbAligne<alignerGagnant){
-            System.out.println(x+"  "+y+"  "+(y-i)+"  "+ (i+x)+"  "+(i+(nombreColone-y)));
+            //System.out.println(x+"  "+y+"  "+(y-i)+"  "+ (i+x)+"  "+(i+(nombreColone-y)));
             if(Matrice [i+x][y-i]==joueur){
                 nbAligne=nbAligne+1;
             }else{

@@ -10,24 +10,24 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 
-public class SetupLocalControlleur {
+public class SetupLocalIAControlleur {
 
     @FXML
-    public Button buttonLancer, buttonChooserJ1, buttonChooserJ2;
-    public ImageView imageJ1, imageJ2;
+    public Button buttonLancer, buttonChooserJ1;
+    public ImageView imageJ1;
     public CheckBox checkTriche;
-    public TextField textLignes, textColonnes, textPower, textMaxScore;
+    public TextField textLignes, textColonnes, textPower, textMaxScore, textFieldDiff;
     public AnchorPane mainPane;
-    public Label labelJ1, labelJ2;
+    public Label labelJ1;
 
     private static Joueur[] joueurs = new Joueur[2];
 
     @FXML
     private void initialize() {
         setupButtonChooser(0, imageJ1, labelJ1, buttonChooserJ1);
-        setupButtonChooser(1, imageJ2, labelJ2, buttonChooserJ2);
         setupButtonLancer();
     }
 
@@ -36,13 +36,13 @@ public class SetupLocalControlleur {
             Stage stage = new Stage();
             joueursPickerController.setPlayerToPick(numeroJoueur);
             try {
+                joueursPickerController.setIA(true);
                 AnchorPane root = FXMLLoader.load(getClass().getResource("../vue/joueursPicker.fxml"), Services.getBundle());
                 Services.setupNewWindow(stage, root, Services.WIDTH_PLAYERS, Services.HEIGHT_PLAYERS, Services.getBundle().getString("pickAPlayer"));
                 stage.getScene().getStylesheets().add(getClass().getResource("../ressources/style.css").toExternalForm());
-                stage.showAndWait();
+                stage.showAndWait(); 
                 iv.setImage(new Image(joueurs[numeroJoueur].getImg()));
                 label.setText(joueurs[numeroJoueur].getNom());
-                System.out.printf(joueurs[numeroJoueur].getImg());
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -55,7 +55,9 @@ public class SetupLocalControlleur {
 
     private void setupButtonLancer(){
         buttonLancer.setOnAction(event ->{
-            if (!joueurs[0].getNom().equals(joueurs[1].getNom())) {
+            int diffTemp = Integer.parseInt(textFieldDiff.getText());
+            joueurs[1] = new Joueur("Mr Robot", new File("src\\tmp\\imageIA_apow4.png").toURI().toString());
+            if ((!joueurs[0].getNom().equals(joueurs[1].getNom())) && (diffTemp>=1 && diffTemp <=7)) {
                 try {
                     System.out.println(mainPane.getScene());
                     //Définir nbLignes,nbColonnes, alignerGagnat, nbVictoire et les joueurs avant de changer la fenêtre
@@ -65,6 +67,7 @@ public class SetupLocalControlleur {
                     PartieGrilleControlleur.setNombreVictoire(Integer.parseInt(textMaxScore.getText()));
                     PartieGrilleControlleur.setJoueurs(joueurs[0], joueurs[1]);
                     PartieGrilleControlleur.setCheating(checkTriche.isSelected());
+                    PartieGrilleControlleur.setIA(diffTemp);
 
                     //Permet de changer la taille de la fenêtre et de la center au milieu de l'écran
                     Stage stage = (Stage) mainPane.getScene().getWindow();

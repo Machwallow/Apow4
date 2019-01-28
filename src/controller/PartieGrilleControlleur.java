@@ -9,6 +9,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -21,6 +22,7 @@ public class PartieGrilleControlleur {
     private static Joueur[] joueurs = new Joueur[2];
     private static Jeu jeuActuel;
     private static boolean cheating;
+    private static int difficuly = 0;
     @FXML
     public AnchorPane mainPane;
     @FXML
@@ -30,14 +32,18 @@ public class PartieGrilleControlleur {
     @FXML
     public BorderPane mainBorder;
     public Button buttonEnd, buttonRollback;
+    public Label title;
     private GridPane mainGrid;
     private int[] grille;
     private int jActuel = 0;
     private static boolean confirm = false;
+    private static IA ia;
 
 
     @FXML
     private void initialize() {
+        if (difficuly != 0)
+            ia = new IA(difficuly);
         if (jeuActuel == null)
             jeuActuel = new Jeu(nombreVictoire, joueurs[0], joueurs[1]);
         jeuActuel.nouvellePartie(nbColonnes, nbLignes, alignerGagnant);
@@ -47,6 +53,7 @@ public class PartieGrilleControlleur {
         buttonRollback.setDisable(!cheating);
         setupRollback();
         setupButtonEnd();
+        title.setFont(new Font("Trebuchet MS Italic", 36.0));
     }
 
     private void setupButtonEnd() {
@@ -112,9 +119,12 @@ public class PartieGrilleControlleur {
         stackPane.setOnMouseClicked(e -> {
             if (grille[indexColonne] >= 0) {
                 System.out.println(grille[indexColonne]);
+
+                //gestion Image
                 ImageView jetonJActuel = new ImageView(new Image(joueurs[jActuel].getImg()));
                 jetonJActuel.setFitWidth(Services.WIDTH_TOKEN);
                 jetonJActuel.setFitHeight(Services.HEIGHT_TOKEN);
+
                 StackPane coupPane = (StackPane) mainGrid.getChildren().get(((grille[indexColonne]) * nbColonnes) + 1 + indexColonne);
                 System.out.println(mainGrid.getChildren().indexOf(mainGrid.getChildren().get(((grille[indexColonne]) * nbColonnes) + 1 + indexColonne)));
                 coupPane.getChildren().add(jetonJActuel);
@@ -122,6 +132,7 @@ public class PartieGrilleControlleur {
                 grille[indexColonne]--;
                 System.out.println(jActuel);
                 int resultatCoup;
+
                 if (jActuel == 0) {
                     resultatCoup = jeuActuel.getPartie().ajouterJeton(1, indexColonne);
                     jActuel++;
@@ -131,37 +142,26 @@ public class PartieGrilleControlleur {
                     jActuel--;
                 }
                 System.out.println("rc = " + resultatCoup);
-                int resultatPartie = 0;
-                switch (resultatCoup) {
-                    case 1:
-                        resultatPartie = jeuActuel.victoireJ1();
-                        break;
-                    case 2:
-                        resultatPartie = -1;
-                        break;
-                    case 6:
-                        resultatPartie = jeuActuel.victoireJ2();
-                        break;
-                    case 7:
-                        resultatPartie = -1;
-                        break;
-                }
-                System.out.println("rp = " + resultatPartie);
-                switch (resultatPartie) {
-                    case -1:
-                        System.out.println("-1");
-                        nouvellePartie();
-                        break;
-                    case 3:
-                        System.out.println("-1");
-                        nouvellePartie();
-                        break;
-                    case 1:
-                        popUpWinner(joueurs[0]);    break;
-                    case 2:
-                        popUpWinner(joueurs[1]);    break;
-                }
+                testResultatCoup(resultatCoup);
+                if (difficuly != 0 && resultatCoup ==0){
+                    int indexColonne2 = ia.choisirCoup(jeuActuel.getPartie(), -1);
+                    jetonJActuel = new ImageView(new Image(joueurs[jActuel].getImg()));
+                    jetonJActuel.setFitWidth(Services.WIDTH_TOKEN);
+                    jetonJActuel.setFitHeight(Services.HEIGHT_TOKEN);
 
+                    StackPane coupPane2 = (StackPane) mainGrid.getChildren().get(((grille[indexColonne2]) * nbColonnes) + 1 + indexColonne2);
+                    System.out.println(mainGrid.getChildren().indexOf(mainGrid.getChildren().get(((grille[indexColonne2]) * nbColonnes) + 1 + indexColonne2)));
+                    coupPane2.getChildren().add(jetonJActuel);
+                    StackPane.setAlignment(coupPane2.getChildren().get(0), Pos.CENTER);
+
+                    grille[indexColonne2]--;
+                    System.out.println(jActuel);
+                    System.out.println("IA JOUE");
+                    int resultatCoupIA = jeuActuel.getPartie().ajouterJeton(-1, indexColonne2) + 5;
+                    jActuel--;
+                    System.out.println("rc IA=" +  resultatCoupIA);
+                    testResultatCoup(resultatCoupIA);
+                }
             }
         });
         mainGrid.add(stackPane, indexColonne, indexLigne);
@@ -214,6 +214,9 @@ public class PartieGrilleControlleur {
     public static void setCheating(boolean cheating) {
         PartieGrilleControlleur.cheating = cheating;
     }
+    public static void setIA(int diff){
+        difficuly = diff;
+    }
 
     private void popUpWinner(Joueur joueur) {
         Stage stageNewWindow = new Stage();
@@ -234,5 +237,38 @@ public class PartieGrilleControlleur {
 
     public static void setConfirm(boolean status){
         confirm = status;
+    }
+
+    private void testResultatCoup(int resultatCoup){
+        int resultatPartie = 0;
+        switch (resultatCoup) {
+            case 1:
+                resultatPartie = jeuActuel.victoireJ1();
+                break;
+            case 2:
+                resultatPartie = -1;
+                break;
+            case 6:
+                resultatPartie = jeuActuel.victoireJ2();
+                break;
+            case 7:
+                resultatPartie = -1;
+                break;
+        }
+        System.out.println("rp = " + resultatPartie);
+        switch (resultatPartie) {
+            case -1:
+                System.out.println("-1");
+                nouvellePartie();
+                break;
+            case 3:
+                System.out.println("victoire joueurs");
+                nouvellePartie();
+                break;
+            case 1:
+                popUpWinner(joueurs[0]);    break;
+            case 2:
+                popUpWinner(joueurs[1]);    break;
+        }
     }
 }

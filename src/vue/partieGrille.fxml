@@ -14,7 +14,7 @@
    <children>
       <BorderPane fx:id="mainBorder" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="691.0" prefWidth="1274.0">
          <top>
-            <Label text="Apow4!" BorderPane.alignment="CENTER">
+            <Label fx:id="title" text="Apow⁴!" BorderPane.alignment="CENTER">
                <BorderPane.margin>
                   <Insets top="25.0" />
                </BorderPane.margin>

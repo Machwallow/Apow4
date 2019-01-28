@@ -23,6 +23,7 @@ public class joueursPickerController {
     public AnchorPane mainPane;
     public static ArrayList<Joueur> joueurs;
     private static int playerToPick;
+    private static boolean ia;
 
     @FXML
     public void initialize() {
@@ -64,7 +65,12 @@ public class joueursPickerController {
         });
         pickColumn.setCellFactory(ActionButtonTableCell.forTableColumn(Services.getBundle().getString("pick"), (Joueur j) -> {
             System.out.println(j);
-            SetupLocalControlleur.setPlayer(playerToPick, j);
+            System.out.println(playerToPick);
+            if (ia)
+                SetupLocalIAControlleur.setPlayer(playerToPick, j);
+            else
+                SetupLocalControlleur.setPlayer(playerToPick, j);
+
             Stage stage = (Stage) mainPane.getScene().getWindow();
             stage.close();
             return j;
@@ -76,5 +82,8 @@ public class joueursPickerController {
 
     public static void setPlayerToPick(int playerNumber){
         playerToPick = playerNumber;
+    }
+    public static void setIA(boolean ia){
+        joueursPickerController.ia = ia;
     }
 }

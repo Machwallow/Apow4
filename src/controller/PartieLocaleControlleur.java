@@ -23,6 +23,7 @@ public class PartieLocaleControlleur {
         setupButtonSplit();
         setupButtonBack();
         setupButtonPlayers();
+        setupButtonIA();
         title.setFont(new Font("Trebuchet MS Italic", 36.0));
     }
 
@@ -41,7 +42,14 @@ public class PartieLocaleControlleur {
 
     private void setupButtonIA(){
         buttonIA.setOnMouseClicked(event -> {
-            //TODO Lancement partie IA
+            Stage stage = Main.stage1;
+            Services.setupFenetre(Services.WIDTH_SETUP, Services.HEIGHT_SETUP, stage);
+            try {
+                AnchorPane pane = FXMLLoader.load(getClass().getResource("../vue/setupLocalIA.fxml"), Services.getBundle());
+                mainPane.getChildren().setAll(pane);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         });
     }
 
