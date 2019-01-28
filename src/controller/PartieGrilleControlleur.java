@@ -125,6 +125,7 @@ public class PartieGrilleControlleur {
                 if (jActuel == 0) {
                     resultatCoup = jeuActuel.getPartie().ajouterJeton(1, indexColonne);
                     jActuel++;
+
                 } else {
                     resultatCoup = jeuActuel.getPartie().ajouterJeton(-1, indexColonne) + 5;
                     jActuel--;
@@ -178,16 +179,18 @@ public class PartieGrilleControlleur {
     private void setupRollback(){
         buttonRollback.setOnAction(event -> {
             int colonne = jeuActuel.getPartie().annuler();
-            System.out.println("colonne:" + colonne);
-            grille[colonne]++;
-            StackPane coupPane = (StackPane) mainGrid.getChildren().get(((grille[colonne]) * nbColonnes) + 1 + colonne);
-            System.out.println(mainGrid.getChildren().indexOf(coupPane));
-            System.out.println(coupPane.getChildren());
-            coupPane.getChildren().remove(coupPane.getChildren().get(0));
-            if (jActuel == 0) {
-                jActuel++;
-            } else {
-                jActuel--;
+            //System.out.println("colonne:" + colonne);
+            if(colonne!=-1) {
+                grille[colonne]++;
+                StackPane coupPane = (StackPane) mainGrid.getChildren().get(((grille[colonne]) * nbColonnes) + 1 + colonne);
+                System.out.println(mainGrid.getChildren().indexOf(coupPane));
+                System.out.println(coupPane.getChildren());
+                coupPane.getChildren().remove(coupPane.getChildren().get(0));
+                if (jActuel == 0) {
+                    jActuel++;
+                } else {
+                    jActuel--;
+                }
             }
         });
     }

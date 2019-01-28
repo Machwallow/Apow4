@@ -53,7 +53,7 @@ public class SetupLocalControlleur {
     }
 
     private void setupButtonLancer(){
-        buttonLancer.setOnMouseClicked(event ->{
+        buttonLancer.setOnAction(event ->{
             if (!joueurs[0].getNom().equals(joueurs[1].getNom())) {
                 try {
                     System.out.println(mainPane.getScene());
